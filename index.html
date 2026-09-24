@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TrimWorks | Built to Work Smarter</title>
+
+    <meta name="description" content="TrimWorks makes string trimming easier with innovative wheel attachments designed to help support the weight of your trimmer.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --green: #39ff14;
+            --dark-green: #1fbe0a;
+            --black: #050505;
+            --dark: #0b0b0b;
+            --gray: #151515;
+            --light-gray: #a7a7a7;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 18px 6%;
+
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(57, 255, 20, 0.15);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .nav-logo span {
+            color: var(--green);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        .nav-button {
+            padding: 12px 22px;
+            border: 1px solid var(--green);
+            border-radius: 8px;
+            color: var(--green);
+        }
+
+        .nav-button:hover {
+            background: var(--green);
+            color: black;
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.5);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+
+            padding: 130px 7% 80px;
+
+            background:
+                radial-gradient(
+                    circle at 75% 45%,
+                    rgba(57, 255, 20, 0.13),
+                    transparent 35%
+                ),
+                #050505;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            width: 600px;
+            height: 600px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(57, 255, 20, 0.08);
+
+            right: -200px;
+            top: 100px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
+
+            align-items: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .tag {
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border: 1px solid rgba(57, 255, 20, 0.4);
+            border-radius: 50px;
+
+            color: var(--green);
+
+            font-size: 13px;
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+
+            background: rgba(57, 255, 20, 0.05);
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 7vw, 100px);
+            line-height: 0.95;
+            font-weight: 1000;
+            letter-spacing: -5px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+            text-shadow:
+                0 0 20px rgba(57, 255, 20, 0.35);
+        }
+
+        .hero p {
+            color: #bdbdbd;
+            font-size: 20px;
+            line-height: 1.7;
+
+            max-width: 650px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 28px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: black;
+
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 0 20px rgba(57, 255, 20, 0.5),
+                0 0 50px rgba(57, 255, 20, 0.2);
+        }
+
+        .btn-secondary {
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        /* =========================
+           PRODUCT VISUAL
+        ========================= */
+
+        .product-display {
+            min-height: 480px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .glow {
+            position: absolute;
+
+            width: 330px;
+            height: 330px;
+
+            background: var(--green);
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            opacity: 0.13;
+        }
+
+        .wheel {
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            border: 24px solid #1b1b1b;
+
+            position: relative;
+
+            box-shadow:
+                0 0 0 4px #333,
+                0 0 50px rgba(57, 255, 20, 0.25);
+
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .wheel::before {
+            content: "";
+
+            position: absolute;
+
+            width: 105px;
+            height: 105px;
+
+            border-radius: 50%;
+
+            background: #080808;
+
+            border: 8px solid var(--green);
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+        }
+
+        .wheel::after {
+            content: "TW";
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            font-size: 28px;
+            font-weight: 1000;
+
+            color: var(--green);
+        }
+
+        .wheel-label {
+            position: absolute;
+
+            bottom: 35px;
+            right: 0;
+
+            background: var(--green);
+            color: black;
+
+            padding: 10px 17px;
+
+            border-radius: 6px;
+
+            font-weight: 900;
+
+            transform: rotate(-5deg);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(3deg);
+            }
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+
+            background: #080808;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            padding: 35px 7%;
+        }
+
+        .stat {
+            text-align: center;
+
+            padding: 10px;
+
+            border-right: 1px solid #222;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h3 {
+            color: var(--green);
+            font-size: 35px;
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            color: #888;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 110px 7%;
+        }
+
+        .section-title {
+            max-width: 800px;
+
+            margin: 0 auto 65px;
+
+            text-align: center;
+        }
+
+        .section-title span {
+            color: var(--green);
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(40px, 5vw, 65px);
+            margin: 15px 0;
+        }
+
+        .section-title p {
+            color: #999;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PROBLEM SECTION
+        ========================= */
+
+        .problem {
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.95),
+                    rgba(0,0,0,.95)
+                );
+        }
+
+        .problem-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .problem-card {
+            padding: 35px;
+
+            background: linear-gradient(
+                145deg,
+                #111,
+                #080808
+            );
+
+            border: 1px solid #222;
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(57,255,20,.5);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.5),
+                0 0 25px rgba(57,255,20,.08);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .problem-card p {
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PRODUCT SECTION
+        ========================= */
+
+        .product-section {
+            background: #080808;
+        }
+
+        .product-grid {
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .product-image {
+            min-height: 450px;
+
+            border-radius: 20px;
+
+            border: 1px solid #222;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(57,255,20,.12),
+                    transparent 55%
+                ),
+                #050505;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .big-wheel {
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            border: 28px solid #222;
+
+            box-shadow:
+                0 0 0 4px #444,
+                inset 0 0 30px #000,
+                0 0 60px rgba(57,255,20,.2);
+        }
+
+        .product-info h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .product-info h2 span {
+            color: var(--green);
+        }
+
+        .product-info > p {
+            color: #999;
+            line-height: 1.8;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .feature-check {
+            min-width: 30px;
+            height: 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(57,255,20,.12);
+
+            color: var(--green);
+
+            font-weight: bold;
+        }
+
+        .feature h4 {
+            margin-bottom: 4px;
+        }
+
+        .feature p {
+            color: #777;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           HOW IT WORKS
+        ========================= */
+
+        .steps {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .step {
+            position: relative;
+
+            padding: 35px;
+
+            border: 1px solid #222;
+
+            border-radius: 15px;
+
+            background: #090909;
+        }
+
+        .step-number {
+            color: var(--green);
+
+            font-size: 50px;
+
+            font-weight: 1000;
+
+            opacity: .7;
+
+            margin-bottom: 20px;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(57,255,20,.13),
+                    transparent 50%
+                ),
+                #050505;
+        }
+
+        .cta h2 {
+            font-size: clamp(45px, 6vw, 75px);
+
+            margin-bottom: 20px;
+        }
+
+        .cta h2 span {
+            color: var(--green);
+        }
+
+        .cta p {
+            color: #999;
+
+            max-width: 650px;
+
+            margin: 0 auto 35px;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 50px 7% 30px;
+
+            border-top: 1px solid #222;
+
+            background: #030303;
+        }
+
+        .footer-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo img {
+            width: 55px;
+        }
+
+        .footer-logo h3 {
+            font-size: 22px;
+        }
+
+        .footer-logo span {
+            color: var(--green);
+        }
+
+        footer p {
+            color: #666;
+        }
+
+        .copyright {
+            text-align: center;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #181818;
+
+            color: #555;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .product-display {
+                min-height: 350px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid #222;
+                padding: 20px;
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .problem-grid,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .wheel {
+                width: 230px;
+                height: 230px;
+            }
+
+            .product-image {
+                min-height: 350px;
+            }
+
+            .big-wheel {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="nav-logo">
+
+        <img src="logo.png" alt="TrimWorks Logo">
+
+        <div>
+            TRIM<span>WORKS</span>
+        </div>
+
+    </div>
+
+    <ul>
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#product">The Product</a></li>
+        <li><a href="#how">How It Works</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-button">
+        Learn More
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div>
+
+            <div class="tag">
+                BUILT TO WORK SMARTER
+            </div>
+
+            <h1>
+                TAKE THE<br>
+                <span>WEIGHT</span><br>
+                OFF.
+            </h1>
+
+            <p>
+                Meet the TrimWorks wheel — an innovative attachment
+                designed to support the weight of your string trimmer
+                and make trimming easier, more comfortable, and less tiring.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#product" class="btn btn-primary">
+                    Explore the Product →
+                </a>
+
+                <a href="#how" class="btn btn-secondary">
+                    See How It Works
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-display">
+
+            <div class="glow"></div>
+
+            <div class="wheel"></div>
+
+            <div class="wheel-label">
+                TRIMWORKS WHEEL
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<div class="stats">
+
+    <div class="stat">
+        <h3>01</h3>
+        <p>Simple Attachment</p>
+    </div>
+
+    <div class="stat">
+        <h3>02</h3>
+        <p>Less Weight on Your Arms</p>
+    </div>
+
+    <div class="stat">
+        <h3>03</h3>
+        <p>Built for Smarter Trimming</p>
+    </div>
+
+</div>
+
+
+<!-- =========================
+     PROBLEM
+========================= -->
+
+<section class="problem" id="problem">
+
+    <div class="section-title">
+
+        <span>THE PROBLEM</span>
+
+        <h2>
+            Trimming shouldn't<br>
+            wear you out.
+        </h2>
+
+        <p>
+            String trimmers can become tiring to hold and control,
+            especially during long jobs. TrimWorks is designed around
+            a simple idea: support the tool so the person doesn't have
+            to carry all of its weight.
+        </p>
+
+    </div>
+
+
+    <div class="problem-grid">
+
+        <div class="problem-card">
+
+            <div class="icon">💪</div>
+
+            <h3>Arm Fatigue</h3>
+
+            <p>
+                Holding a trimmer for extended periods can leave
+                your arms and shoulders exhausted.
+            </p>
+
+        </div>
+
+
+        <div class="problem-card">
+
+            <div class="icon">🧍</div>
+
+            <h3>Back Strain</h3>
+
+            <p>
+                Repeated trimming can be uncomfortable when you're
+                constantly supporting and maneuvering the machine.
+            </p>
+
+        </div>
+
+
+        <div class="problem-card">
+
+            <div class="icon">⏱️</div>
+
+            <h3>Long Jobs</h3>
+
+            <p>
+                The longer you work, the more noticeable the weight
+                and fatigue can become.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCT
+========================= -->
+
+<section class="product-section" id="product">
+
+    <div class="product-grid">
+
+        <div class="product-image">
+
+            <div class="big-wheel"></div>
+
+        </div>
+
+
+        <div class="product-info">
+
+            <h2>
+                A small wheel.<br>
+                A <span>big difference.</span>
+            </h2>
+
+            <p>
+                TrimWorks attaches a support wheel to a string trimmer,
+                allowing the wheel to help carry the weight while you
+                guide the tool.
+            </p>
+
+
+            <div class="feature">
+
+                <div class="feature-check">✓</div>
+
+                <div>
+                    <h4>Support the Trimmer</h4>
+
+                    <p>
+                        Let the wheel help carry the load while trimming.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-check">✓</div>
+
+                <div>
+                    <h4>Designed for Comfort</h4>
+
+                    <p>
+                        Reduce the amount of weight you need to hold
+                        throughout the job.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-check">✓</div>
+
+                <div>
+                    <h4>Simple Concept</h4>
+
+                    <p>
+                        A straightforward attachment designed to make
+                        an everyday tool easier to use.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section id="how">
+
+    <div class="section-title">
+
+        <span>HOW IT WORKS</span>
+
+        <h2>
+            Simple. Smart. Trim.
+        </h2>
+
+        <p>
+            The TrimWorks concept is built around making the job easier
+            without making the equipment complicated.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>Attach</h3>
+
+            <p>
+                Secure the TrimWorks wheel and attachment mechanism
+                to your string trimmer.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>Adjust</h3>
+
+            <p>
+                Position the wheel so it supports the trimmer while
+                still allowing you to control the cutting head.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>Trim</h3>
+
+            <p>
+                Roll the support wheel along the ground while you
+                guide the trimmer and get the job done.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta" id="contact">
+
+    <h2>
+        WORK <span>SMARTER.</span>
+    </h2>
+
+    <p>
+        TrimWorks is creating a smarter way to use a string trimmer.
+        Less weight to carry. More comfort. More time getting the job done.
+    </p>
+
+    <a href="mailto:trimworks@example.com" class="btn btn-primary">
+        Contact TrimWorks →
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div class="footer-logo">
+
+            <img src="logo.png" alt="TrimWorks Logo">
+
+            <div>
+                <h3>
+                    TRIM<span>WORKS</span>
+                </h3>
+
+                <p>
+                    Built to Work Smarter.
+                </p>
+            </div>
+
+        </div>
+
+
+        <p>
+            Innovative tools for everyday work.
+        </p>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 TrimWorks. All rights reserved.
+    </div>
+
+</footer>
+
+
+<script>
+
+    // Add a subtle reveal animation when sections enter the screen
+
+    const elements = document.querySelectorAll(
+        ".problem-card, .step, .product-info, .product-image"
+    );
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+    elements.forEach(element => {
+
+        element.style.opacity = "0";
+
+        element.style.transform = "translateY(30px)";
+
+        element.style.transition =
+            "opacity .7s ease, transform .7s ease";
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+</body>
+</html>
