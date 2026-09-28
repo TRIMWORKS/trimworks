@@ -1,1303 +1,1177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>TrimWorks | Built to Work Smarter</title>
-
-    <meta name="description" content="TrimWorks makes string trimming easier with an innovative wheel attachment designed to help support the weight of your trimmer.">
-
-    <style>
-
-        /* =========================
-           GLOBAL
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --green: #39ff14;
-            --dark-green: #1fbe0a;
-            --black: #050505;
-            --dark: #0b0b0b;
-            --gray: #151515;
-            --light-gray: #a7a7a7;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--black);
-            color: var(--white);
-            overflow-x: hidden;
-        }
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 18px 6%;
-
-            background: rgba(0, 0, 0, 0.78);
-            backdrop-filter: blur(15px);
-
-            border-bottom: 1px solid rgba(57, 255, 20, 0.15);
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
 
-            font-size: 22px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-
-        .nav-logo img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .nav-logo span {
-            color: var(--green);
-        }
+<title>TrimWorks | Built to Work Smarter</title>
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 28px;
-        }
+<meta
+    name="description"
+    content="TrimWorks creates innovative string trimmer attachments designed to help support the weight of your trimmer and make trimming more comfortable."
+>
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+<style>
 
-        nav a:hover {
-            color: var(--green);
-        }
+/* =====================================================
+   RESET
+===================================================== */
 
-        .nav-button {
-            padding: 12px 22px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-            border: 1px solid var(--green);
-            border-radius: 8px;
+:root {
+    --green: #39ff14;
+    --green-dark: #1fc707;
+    --black: #050505;
+    --black-2: #090909;
+    --black-3: #101010;
+    --gray: #888;
+    --white: #ffffff;
+}
 
-            color: var(--green);
-        }
+body {
+    background: var(--black);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
 
-        .nav-button:hover {
-            background: var(--green);
-            color: black;
+img {
+    max-width: 100%;
+}
 
-            box-shadow:
-                0 0 25px rgba(57, 255, 20, 0.5);
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        /* =========================
-           HERO
-        ========================= */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
-        .hero {
-            min-height: 100vh;
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    width: 100%;
 
-            position: relative;
-            overflow: hidden;
+    z-index: 999;
 
-            padding: 140px 7% 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-            background:
-                radial-gradient(
-                    circle at 75% 45%,
-                    rgba(57, 255, 20, 0.13),
-                    transparent 35%
-                ),
-                #050505;
-        }
+    padding: 14px 5%;
 
-        .hero::before {
-            content: "";
+    background: rgba(3, 3, 3, 0.88);
 
-            position: absolute;
+    backdrop-filter: blur(15px);
 
-            width: 600px;
-            height: 600px;
+    border-bottom: 1px solid rgba(57,255,20,.15);
+}
 
-            border-radius: 50%;
+.nav-logo {
+    display: flex;
+    align-items: center;
 
-            border: 1px solid rgba(57, 255, 20, 0.08);
+    gap: 12px;
 
-            right: -200px;
-            top: 100px;
-        }
+    font-size: 21px;
 
-        .hero-content {
-            max-width: 1200px;
-            width: 100%;
+    font-weight: 900;
 
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+    letter-spacing: 1px;
+}
 
-            gap: 70px;
+.nav-logo img {
+    width: 55px;
+    height: 55px;
 
-            align-items: center;
+    object-fit: contain;
+}
 
-            position: relative;
-            z-index: 2;
-        }
+.nav-logo span {
+    color: var(--green);
+}
 
-        .tag {
-            display: inline-block;
+nav ul {
+    display: flex;
 
-            padding: 8px 15px;
+    gap: 28px;
 
-            border: 1px solid rgba(57, 255, 20, 0.4);
-            border-radius: 50px;
+    list-style: none;
+}
 
-            color: var(--green);
+nav ul li a {
+    font-size: 14px;
 
-            font-size: 13px;
-            font-weight: bold;
+    font-weight: bold;
 
-            letter-spacing: 2px;
+    color: #ddd;
 
-            margin-bottom: 25px;
+    transition: .3s;
+}
 
-            background: rgba(57, 255, 20, 0.05);
-        }
+nav ul li a:hover {
+    color: var(--green);
+}
 
-        .hero h1 {
-            font-size: clamp(55px, 7vw, 100px);
+.nav-button {
+    border: 1px solid var(--green);
 
-            line-height: 0.95;
+    color: var(--green);
 
-            font-weight: 1000;
+    padding: 11px 19px;
 
-            letter-spacing: -5px;
+    border-radius: 7px;
 
-            margin-bottom: 30px;
-        }
+    font-size: 13px;
 
-        .hero h1 span {
-            color: var(--green);
+    font-weight: bold;
 
-            text-shadow:
-                0 0 20px rgba(57, 255, 20, 0.35);
-        }
+    transition: .3s;
+}
 
-        .hero p {
-            color: #bdbdbd;
+.nav-button:hover {
+    background: var(--green);
 
-            font-size: 20px;
+    color: black;
 
-            line-height: 1.7;
+    box-shadow:
+        0 0 25px rgba(57,255,20,.4);
+}
 
-            max-width: 650px;
+/* =====================================================
+   HERO
+===================================================== */
 
-            margin-bottom: 35px;
-        }
+.hero {
+    min-height: 100vh;
 
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+    display: flex;
+    align-items: center;
 
-        .btn {
-            padding: 16px 28px;
+    padding-top: 90px;
 
-            border-radius: 8px;
+    background: #050505;
 
-            text-decoration: none;
+    position: relative;
 
-            font-weight: bold;
+    overflow: hidden;
+}
 
-            transition: 0.3s;
+.hero::after {
+    content: "";
 
-            display: inline-block;
-        }
+    position: absolute;
 
-        .btn-primary {
-            background: var(--green);
-            color: black;
+    width: 650px;
+    height: 650px;
 
-            box-shadow:
-                0 0 25px rgba(57, 255, 20, 0.2);
-        }
+    right: -250px;
+    top: 80px;
 
-        .btn-primary:hover {
-            transform: translateY(-4px);
+    border-radius: 50%;
 
-            box-shadow:
-                0 0 20px rgba(57, 255, 20, 0.5),
-                0 0 50px rgba(57, 255, 20, 0.2);
-        }
+    border: 1px solid rgba(57,255,20,.08);
 
-        .btn-secondary {
-            border: 1px solid #444;
-            color: white;
-        }
+    box-shadow:
+        0 0 150px rgba(57,255,20,.05);
+}
 
-        .btn-secondary:hover {
-            border-color: var(--green);
-            color: var(--green);
-        }
+.hero-content {
+    width: 90%;
 
-        /* =========================
-           HERO WHEEL
-        ========================= */
+    max-width: 1400px;
 
-        .product-display {
-            min-height: 480px;
+    margin: auto;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    display: grid;
 
-            position: relative;
-        }
+    grid-template-columns: .85fr 1.15fr;
 
-        .glow {
-            position: absolute;
+    align-items: center;
 
-            width: 330px;
-            height: 330px;
+    position: relative;
 
-            background: var(--green);
+    z-index: 2;
+}
 
-            border-radius: 50%;
+.hero-text {
+    padding: 50px 0;
+}
 
-            filter: blur(100px);
+.tag {
+    display: inline-block;
 
-            opacity: 0.13;
-        }
+    border: 1px solid rgba(57,255,20,.5);
 
-        .wheel {
-            width: 300px;
-            height: 300px;
+    color: var(--green);
 
-            border-radius: 50%;
+    padding: 8px 15px;
 
-            border: 24px solid #1b1b1b;
+    border-radius: 30px;
 
-            position: relative;
+    font-size: 11px;
 
-            box-shadow:
-                0 0 0 4px #333,
-                0 0 50px rgba(57, 255, 20, 0.25);
+    font-weight: 900;
 
-            animation: float 4s ease-in-out infinite;
-        }
+    letter-spacing: 2px;
 
-        .wheel::before {
-            content: "";
+    margin-bottom: 25px;
 
-            position: absolute;
+    background: rgba(57,255,20,.04);
+}
 
-            width: 105px;
-            height: 105px;
+.hero h1 {
+    font-size: clamp(55px, 7vw, 100px);
 
-            border-radius: 50%;
+    line-height: .9;
 
-            background: #080808;
+    letter-spacing: -5px;
 
-            border: 8px solid var(--green);
+    font-weight: 1000;
 
-            top: 50%;
-            left: 50%;
+    margin-bottom: 30px;
+}
 
-            transform: translate(-50%, -50%);
+.hero h1 span {
+    color: var(--green);
 
-            box-shadow:
-                0 0 30px rgba(57, 255, 20, 0.4);
-        }
+    text-shadow:
+        0 0 30px rgba(57,255,20,.25);
+}
 
-        .wheel::after {
-            content: "TW";
+.hero p {
+    color: #aaa;
 
-            position: absolute;
+    font-size: 18px;
 
-            top: 50%;
-            left: 50%;
+    line-height: 1.7;
 
-            transform: translate(-50%, -50%);
+    max-width: 560px;
 
-            font-size: 28px;
-            font-weight: 1000;
+    margin-bottom: 30px;
+}
 
-            color: var(--green);
-        }
+.buttons {
+    display: flex;
 
-        .wheel-label {
-            position: absolute;
+    gap: 14px;
 
-            bottom: 35px;
-            right: 0;
+    flex-wrap: wrap;
+}
 
-            background: var(--green);
-            color: black;
+.btn {
+    display: inline-block;
 
-            padding: 10px 17px;
+    padding: 15px 25px;
 
-            border-radius: 6px;
+    border-radius: 8px;
 
-            font-weight: 900;
+    font-weight: bold;
 
-            transform: rotate(-5deg);
-        }
+    transition: .3s;
+}
 
-        @keyframes float {
+.btn-green {
+    color: black;
 
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
+    background: var(--green);
 
-            50% {
-                transform: translateY(-15px) rotate(3deg);
-            }
-        }
+    box-shadow:
+        0 0 25px rgba(57,255,20,.18);
+}
 
-        /* =========================
-           STATS
-        ========================= */
+.btn-green:hover {
+    transform: translateY(-3px);
 
-        .stats {
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
+    box-shadow:
+        0 0 35px rgba(57,255,20,.4);
+}
 
-            background: #080808;
+.btn-outline {
+    border: 1px solid #555;
 
-            display: grid;
+    color: white;
+}
 
-            grid-template-columns: repeat(3, 1fr);
+.btn-outline:hover {
+    border-color: var(--green);
 
-            padding: 35px 7%;
-        }
+    color: var(--green);
+}
 
-        .stat {
-            text-align: center;
+/* HERO IMAGE */
 
-            padding: 10px;
+.hero-image {
+    height: 650px;
 
-            border-right: 1px solid #222;
-        }
+    position: relative;
 
-        .stat:last-child {
-            border-right: none;
-        }
+    overflow: hidden;
 
-        .stat h3 {
-            color: var(--green);
+    border-left: 2px solid var(--green);
+}
 
-            font-size: 35px;
+.hero-image img {
+    width: 100%;
+    height: 100%;
 
-            margin-bottom: 5px;
-        }
+    object-fit: cover;
 
-        .stat p {
-            color: #888;
-        }
+    object-position: center;
 
-        /* =========================
-           GENERAL SECTIONS
-        ========================= */
+    filter:
+        contrast(1.08)
+        saturate(.9);
+}
 
-        section {
-            padding: 110px 7%;
-        }
+.hero-image::after {
+    content: "";
 
-        .section-title {
-            max-width: 800px;
+    position: absolute;
 
-            margin: 0 auto 65px;
+    inset: 0;
 
-            text-align: center;
-        }
+    background:
+        linear-gradient(
+            90deg,
+            #050505 0%,
+            rgba(5,5,5,.25) 35%,
+            transparent 65%
+        );
+}
 
-        .section-title span {
-            color: var(--green);
+/* =====================================================
+   STATS
+===================================================== */
 
-            font-weight: bold;
+.stats {
+    display: grid;
 
-            letter-spacing: 3px;
+    grid-template-columns: repeat(3,1fr);
 
-            font-size: 13px;
-        }
+    background: #080808;
 
-        .section-title h2 {
-            font-size: clamp(40px, 5vw, 65px);
+    border-top: 1px solid #222;
 
-            margin: 15px 0;
-        }
+    border-bottom: 1px solid #222;
+}
 
-        .section-title p {
-            color: #999;
+.stat {
+    padding: 30px;
 
-            font-size: 18px;
+    text-align: center;
 
-            line-height: 1.7;
-        }
+    border-right: 1px solid #252525;
+}
 
-        /* =========================
-           PROBLEM SECTION
-        ========================= */
+.stat:last-child {
+    border-right: none;
+}
 
-        .problem {
-            background: #050505;
-        }
+.stat-number {
+    color: var(--green);
 
-        .problem-grid {
-            max-width: 1100px;
+    font-size: 32px;
 
-            margin: auto;
+    font-weight: 1000;
 
-            display: grid;
+    margin-bottom: 7px;
+}
 
-            grid-template-columns: repeat(3, 1fr);
+.stat p {
+    color: #aaa;
+}
 
-            gap: 20px;
-        }
+/* =====================================================
+   GENERAL
+===================================================== */
 
-        .problem-card {
-            padding: 35px;
+section {
+    padding: 110px 6%;
+}
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #111,
-                    #080808
-                );
+.section-heading {
+    max-width: 850px;
 
-            border: 1px solid #222;
+    margin: 0 auto 60px;
 
-            border-radius: 15px;
+    text-align: center;
+}
 
-            transition: 0.3s;
-        }
+.section-heading small {
+    color: var(--green);
 
-        .problem-card:hover {
-            transform: translateY(-8px);
+    font-weight: bold;
 
-            border-color: rgba(57,255,20,.5);
+    letter-spacing: 3px;
+}
 
-            box-shadow:
-                0 15px 40px rgba(0,0,0,.5),
-                0 0 25px rgba(57,255,20,.08);
-        }
+.section-heading h2 {
+    font-size: clamp(40px,5vw,65px);
 
-        .icon {
-            font-size: 40px;
+    line-height: 1;
 
-            margin-bottom: 20px;
-        }
+    margin: 15px 0 20px;
+}
 
-        .problem-card h3 {
-            margin-bottom: 12px;
+.section-heading h2 span {
+    color: var(--green);
+}
 
-            font-size: 22px;
-        }
+.section-heading p {
+    color: #888;
 
-        .problem-card p {
-            color: #888;
+    line-height: 1.7;
 
-            line-height: 1.7;
-        }
+    font-size: 18px;
+}
 
-        /* =========================
-           TRIMMER SHOWCASE
-        ========================= */
+/* =====================================================
+   PROBLEM
+===================================================== */
 
-        .trimmer-section {
-            background: #050505;
+.problem {
+    background: #050505;
+}
 
-            position: relative;
+.problem-layout {
+    max-width: 1200px;
 
-            overflow: hidden;
-        }
+    margin: auto;
 
-        .trimmer-showcase {
-            max-width: 1200px;
+    display: grid;
 
-            margin: auto;
+    grid-template-columns: .8fr 1.2fr;
 
-            display: grid;
+    gap: 50px;
 
-            grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
 
-            gap: 70px;
+.problem-intro h2 {
+    font-size: 55px;
 
-            align-items: center;
-        }
+    line-height: 1;
 
-        .trimmer-visual {
-            min-height: 500px;
+    margin-bottom: 20px;
+}
 
-            display: flex;
+.problem-intro h2 span {
+    color: var(--green);
+}
 
-            align-items: center;
+.problem-intro p {
+    color: #888;
 
-            justify-content: center;
+    line-height: 1.7;
+}
 
-            position: relative;
+.problem-grid {
+    display: grid;
 
-            border-radius: 25px;
+    grid-template-columns: repeat(3,1fr);
 
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(57,255,20,.13),
-                    transparent 55%
-                ),
-                #080808;
+    gap: 15px;
+}
 
-            border: 1px solid #222;
+.problem-card {
+    padding: 25px;
 
-            overflow: hidden;
-        }
+    background: #0b0b0b;
 
-        .trimmer-visual::before {
-            content: "";
+    border: 1px solid #252525;
 
-            position: absolute;
+    border-radius: 12px;
 
-            width: 350px;
-            height: 350px;
+    transition: .3s;
+}
 
-            border-radius: 50%;
+.problem-card:hover {
+    transform: translateY(-7px);
 
-            border: 1px solid rgba(57,255,20,.15);
+    border-color: rgba(57,255,20,.5);
+}
 
-            box-shadow:
-                0 0 80px rgba(57,255,20,.08);
-        }
+.problem-icon {
+    font-size: 32px;
 
-        .trimmer-svg {
-            width: 90%;
+    color: var(--green);
 
-            max-width: 550px;
+    margin-bottom: 20px;
+}
 
-            position: relative;
+.problem-card h3 {
+    margin-bottom: 10px;
+}
 
-            z-index: 2;
+.problem-card p {
+    color: #777;
 
-            filter:
-                drop-shadow(
-                    0 0 12px rgba(57,255,20,.12)
-                );
-        }
+    line-height: 1.6;
 
-        .trimmer-info h2 {
-            font-size: clamp(40px, 5vw, 65px);
+    font-size: 14px;
+}
 
-            line-height: 1;
+/* =====================================================
+   TRIMMER SECTION
+===================================================== */
 
-            margin-bottom: 25px;
-        }
+.trimmer-section {
+    background: #080808;
 
-        .trimmer-info h2 span {
-            color: var(--green);
+    padding-top: 80px;
+}
 
-            text-shadow:
-                0 0 20px rgba(57,255,20,.25);
-        }
+.trimmer-layout {
+    max-width: 1250px;
 
-        .trimmer-info > p {
-            color: #999;
+    margin: auto;
 
-            font-size: 18px;
+    display: grid;
 
-            line-height: 1.8;
+    grid-template-columns: 1.15fr .85fr;
 
-            margin-bottom: 30px;
-        }
+    align-items: center;
 
-        .trimmer-feature {
-            display: flex;
+    gap: 60px;
+}
 
-            gap: 15px;
+.trimmer-photo {
+    height: 600px;
 
-            margin-bottom: 22px;
-        }
+    border-radius: 20px;
 
-        .trimmer-feature-number {
-            min-width: 38px;
-            height: 38px;
+    overflow: hidden;
 
-            display: flex;
+    border: 1px solid #222;
 
-            align-items: center;
-            justify-content: center;
+    position: relative;
+}
 
-            border-radius: 8px;
+.trimmer-photo img {
+    width: 100%;
+    height: 100%;
 
-            background: rgba(57,255,20,.1);
+    object-fit: cover;
+}
 
-            border: 1px solid rgba(57,255,20,.25);
+.trimmer-photo::after {
+    content: "";
 
-            color: var(--green);
+    position: absolute;
 
-            font-weight: 900;
-        }
+    inset: 0;
 
-        .trimmer-feature h4 {
-            margin-bottom: 5px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57,255,20,.08),
+            transparent 50%
+        );
 
-            font-size: 18px;
-        }
+    pointer-events: none;
+}
 
-        .trimmer-feature p {
-            color: #777;
+.trimmer-copy .tag {
+    margin-bottom: 20px;
+}
 
-            line-height: 1.6;
-        }
+.trimmer-copy h2 {
+    font-size: clamp(45px,5vw,70px);
 
-        /* =========================
-           PRODUCT SECTION
-        ========================= */
+    line-height: .95;
 
-        .product-section {
-            background: #080808;
-        }
+    margin-bottom: 25px;
+}
 
-        .product-grid {
-            max-width: 1150px;
+.trimmer-copy h2 span {
+    color: var(--green);
+}
 
-            margin: auto;
+.trimmer-copy > p {
+    color: #999;
 
-            display: grid;
+    line-height: 1.8;
 
-            grid-template-columns: 1fr 1fr;
+    font-size: 17px;
 
-            gap: 80px;
+    margin-bottom: 35px;
+}
 
-            align-items: center;
-        }
+.feature-row {
+    display: flex;
 
-        .product-image {
-            min-height: 450px;
+    gap: 15px;
 
-            border-radius: 20px;
+    margin-bottom: 23px;
+}
 
-            border: 1px solid #222;
+.feature-number {
+    min-width: 40px;
+    height: 40px;
 
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(57,255,20,.12),
-                    transparent 55%
-                ),
-                #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            display: flex;
+    border-radius: 50%;
 
-            align-items: center;
+    color: black;
 
-            justify-content: center;
-        }
+    background: var(--green);
 
-        .big-wheel {
-            width: 280px;
-            height: 280px;
+    font-weight: 1000;
+}
 
-            border-radius: 50%;
+.feature-row h3 {
+    margin-bottom: 5px;
+}
 
-            border: 28px solid #222;
+.feature-row p {
+    color: #777;
 
-            box-shadow:
-                0 0 0 4px #444,
-                inset 0 0 30px #000,
-                0 0 60px rgba(57,255,20,.2);
+    line-height: 1.5;
+}
 
-            position: relative;
-        }
+/* =====================================================
+   PRODUCT
+===================================================== */
 
-        .big-wheel::before {
-            content: "";
+.product {
+    background: #050505;
+}
 
-            position: absolute;
+.product-layout {
+    max-width: 1200px;
 
-            width: 90px;
-            height: 90px;
+    margin: auto;
 
-            border-radius: 50%;
+    display: grid;
 
-            border: 7px solid var(--green);
+    grid-template-columns: .9fr 1.1fr;
 
-            background: #050505;
+    gap: 70px;
 
-            top: 50%;
-            left: 50%;
+    align-items: center;
+}
 
-            transform: translate(-50%, -50%);
-        }
+.product-photo {
+    min-height: 500px;
 
-        .product-info h2 {
-            font-size: 50px;
+    border-radius: 20px;
 
-            margin-bottom: 20px;
-        }
+    overflow: hidden;
 
-        .product-info h2 span {
-            color: var(--green);
-        }
+    border: 1px solid #252525;
 
-        .product-info > p {
-            color: #999;
+    background: #090909;
+}
 
-            line-height: 1.8;
+.product-photo img {
+    width: 100%;
+    height: 100%;
 
-            font-size: 17px;
+    min-height: 500px;
 
-            margin-bottom: 30px;
-        }
+    object-fit: cover;
+}
 
-        .feature {
-            display: flex;
+.product-copy h2 {
+    font-size: 55px;
 
-            gap: 15px;
+    line-height: 1;
 
-            margin-bottom: 20px;
-        }
+    margin-bottom: 20px;
+}
 
-        .feature-check {
-            min-width: 30px;
-            height: 30px;
+.product-copy h2 span {
+    color: var(--green);
+}
 
-            display: flex;
+.product-copy > p {
+    color: #888;
 
-            align-items: center;
-            justify-content: center;
+    line-height: 1.8;
 
-            border-radius: 50%;
+    font-size: 17px;
 
-            background: rgba(57,255,20,.12);
+    margin-bottom: 30px;
+}
 
-            color: var(--green);
+.check {
+    display: flex;
 
-            font-weight: bold;
-        }
+    gap: 15px;
 
-        .feature h4 {
-            margin-bottom: 4px;
-        }
+    margin-bottom: 20px;
+}
 
-        .feature p {
-            color: #777;
+.check-icon {
+    min-width: 30px;
+    height: 30px;
 
-            line-height: 1.5;
-        }
+    border-radius: 50%;
 
-        /* =========================
-           ADJUSTMENT SECTION
-        ========================= */
+    display: flex;
 
-        .adjustment-section {
-            background: #080808;
-        }
+    align-items: center;
+    justify-content: center;
 
-        .adjustment-container {
-            max-width: 1150px;
+    background: rgba(57,255,20,.12);
 
-            margin: auto;
+    color: var(--green);
 
-            display: grid;
+    font-weight: bold;
+}
 
-            grid-template-columns: 1fr 1fr;
+.check h4 {
+    margin-bottom: 4px;
+}
 
-            gap: 70px;
+.check p {
+    color: #777;
 
-            align-items: center;
-        }
+    line-height: 1.5;
+}
 
-        .adjustment-diagram {
-            min-height: 430px;
+/* =====================================================
+   ADJUSTMENT
+===================================================== */
 
-            border-radius: 20px;
+.adjustment {
+    background: #090909;
+}
 
-            border: 1px solid #222;
+.adjustment-layout {
+    max-width: 1200px;
 
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(57,255,20,.08),
-                    transparent 60%
-                );
+    margin: auto;
 
-            display: flex;
+    display: grid;
 
-            align-items: center;
+    grid-template-columns: 1fr 1fr;
 
-            justify-content: center;
+    gap: 70px;
 
-            position: relative;
+    align-items: center;
+}
 
-            overflow: hidden;
-        }
+.adjustment-photo {
+    height: 500px;
 
-        .adjustment-wheel {
-            width: 220px;
-            height: 220px;
+    border-radius: 20px;
 
-            border-radius: 50%;
+    overflow: hidden;
 
-            border: 22px solid #202020;
+    border: 1px solid #222;
 
-            box-shadow:
-                0 0 0 3px #444,
-                0 0 45px rgba(57,255,20,.2);
+    position: relative;
+}
 
-            position: relative;
-        }
+.adjustment-photo img {
+    width: 100%;
+    height: 100%;
 
-        .adjustment-wheel::after {
-            content: "";
+    object-fit: cover;
+}
 
-            position: absolute;
+.adjustment-photo::after {
+    content: "";
 
-            width: 75px;
-            height: 75px;
+    position: absolute;
 
-            border-radius: 50%;
+    inset: 0;
 
-            background: #080808;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(57,255,20,.15),
+            transparent 60%
+        );
+}
 
-            border: 5px solid var(--green);
+.adjustment-copy h2 {
+    font-size: 55px;
 
-            top: 50%;
-            left: 50%;
+    line-height: 1;
 
-            transform: translate(-50%, -50%);
-        }
+    margin-bottom: 20px;
+}
 
-        .adjustment-arm {
-            position: absolute;
+.adjustment-copy h2 span {
+    color: var(--green);
+}
 
-            width: 190px;
-            height: 16px;
+.adjustment-copy > p {
+    color: #999;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #222,
-                    var(--green)
-                );
+    line-height: 1.8;
 
-            border-radius: 20px;
+    margin-bottom: 30px;
+}
 
-            transform: rotate(-22deg);
+.adjustment-point {
+    background: #0d0d0d;
 
-            top: 125px;
-            right: 70px;
+    border-left: 3px solid var(--green);
 
-            box-shadow:
-                0 0 15px rgba(57,255,20,.2);
-        }
+    padding: 17px 20px;
 
-        .adjustment-marker {
-            position: absolute;
+    margin-bottom: 12px;
 
-            top: 55px;
-            right: 45px;
+    border-radius: 0 7px 7px 0;
+}
 
-            padding: 10px 15px;
+.adjustment-point strong {
+    display: block;
 
-            background: var(--green);
+    margin-bottom: 5px;
+}
 
-            color: #000;
+.adjustment-point span {
+    color: #777;
 
-            border-radius: 7px;
+    line-height: 1.5;
 
-            font-weight: 900;
+    font-size: 14px;
+}
 
-            font-size: 13px;
-        }
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
 
-        .adjustment-info h2 {
-            font-size: clamp(40px, 5vw, 60px);
+.how {
+    background: #050505;
+}
 
-            line-height: 1;
+.how-grid {
+    max-width: 1200px;
 
-            margin-bottom: 25px;
-        }
+    margin: auto;
 
-        .adjustment-info h2 span {
-            color: var(--green);
-        }
+    display: grid;
 
-        .adjustment-info > p {
-            color: #999;
+    grid-template-columns: repeat(3,1fr);
 
-            font-size: 18px;
+    gap: 20px;
+}
 
-            line-height: 1.8;
+.how-card {
+    background: #0b0b0b;
 
-            margin-bottom: 30px;
-        }
+    border: 1px solid #222;
 
-        .adjustment-points {
-            display: flex;
+    border-radius: 15px;
 
-            flex-direction: column;
+    overflow: hidden;
+}
 
-            gap: 15px;
-        }
+.how-photo {
+    height: 230px;
 
-        .adjustment-point {
-            padding: 18px;
+    overflow: hidden;
+}
 
-            border-left: 3px solid var(--green);
+.how-photo img {
+    width: 100%;
+    height: 100%;
 
-            background: #0d0d0d;
+    object-fit: cover;
+}
 
-            border-radius: 0 8px 8px 0;
-        }
+.how-text {
+    padding: 25px;
+}
 
-        .adjustment-point strong {
-            display: block;
+.step {
+    color: var(--green);
 
-            margin-bottom: 5px;
+    font-size: 13px;
 
-            color: white;
-        }
+    font-weight: 900;
 
-        .adjustment-point span {
-            color: #777;
+    letter-spacing: 2px;
 
-            line-height: 1.5;
-        }
+    margin-bottom: 10px;
+}
 
-        /* =========================
-           HOW IT WORKS
-        ========================= */
+.how-text h3 {
+    font-size: 23px;
 
-        .steps {
-            max-width: 1000px;
+    margin-bottom: 10px;
+}
 
-            margin: auto;
+.how-text p {
+    color: #777;
 
-            display: grid;
+    line-height: 1.6;
+}
 
-            grid-template-columns: repeat(3, 1fr);
+/* =====================================================
+   CTA
+===================================================== */
 
-            gap: 25px;
-        }
+.cta {
+    text-align: center;
 
-        .step {
-            position: relative;
+    padding: 120px 20px;
 
-            padding: 35px;
+    background:
+        linear-gradient(
+            rgba(5,5,5,.85),
+            rgba(5,5,5,.95)
+        ),
+        url("hero-trimmer.jpg") center/cover;
 
-            border: 1px solid #222;
+    border-top: 1px solid rgba(57,255,20,.2);
+}
 
-            border-radius: 15px;
+.cta h2 {
+    font-size: clamp(50px,7vw,90px);
 
-            background: #090909;
-        }
+    line-height: .95;
 
-        .step-number {
-            color: var(--green);
+    margin-bottom: 25px;
+}
 
-            font-size: 50px;
+.cta h2 span {
+    color: var(--green);
+}
 
-            font-weight: 1000;
+.cta p {
+    color: #aaa;
 
-            opacity: .7;
+    max-width: 650px;
 
-            margin-bottom: 20px;
-        }
+    margin: auto auto 30px;
 
-        .step h3 {
-            margin-bottom: 10px;
-        }
+    line-height: 1.7;
 
-        .step p {
-            color: #888;
+    font-size: 18px;
+}
 
-            line-height: 1.6;
-        }
+/* =====================================================
+   FOOTER
+===================================================== */
 
-        /* =========================
-           CTA
-        ========================= */
+footer {
+    background: #030303;
 
-        .cta {
-            text-align: center;
+    border-top: 1px solid #222;
 
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(57,255,20,.13),
-                    transparent 50%
-                ),
-                #050505;
-        }
+    padding: 45px 6% 25px;
+}
 
-        .cta h2 {
-            font-size: clamp(45px, 6vw, 75px);
+.footer-top {
+    display: flex;
 
-            margin-bottom: 20px;
-        }
+    justify-content: space-between;
 
-        .cta h2 span {
-            color: var(--green);
-        }
+    align-items: center;
 
-        .cta p {
-            color: #999;
+    max-width: 1300px;
 
-            max-width: 650px;
+    margin: auto;
 
-            margin: 0 auto 35px;
+    padding-bottom: 30px;
 
-            font-size: 18px;
+    border-bottom: 1px solid #181818;
+}
 
-            line-height: 1.7;
-        }
+.footer-brand {
+    display: flex;
 
-        /* =========================
-           FOOTER
-        ========================= */
+    align-items: center;
 
-        footer {
-            padding: 50px 7% 30px;
+    gap: 12px;
+}
 
-            border-top: 1px solid #222;
+.footer-brand img {
+    width: 60px;
+}
 
-            background: #030303;
-        }
+.footer-brand h3 {
+    font-size: 22px;
+}
 
-        .footer-top {
-            display: flex;
+.footer-brand span {
+    color: var(--green);
+}
 
-            justify-content: space-between;
+.footer-brand p,
+.footer-top > p {
+    color: #666;
 
-            align-items: center;
+    font-size: 13px;
+}
 
-            margin-bottom: 40px;
-        }
+.copyright {
+    text-align: center;
 
-        .footer-logo {
-            display: flex;
+    color: #444;
 
-            align-items: center;
+    padding-top: 20px;
 
-            gap: 12px;
-        }
+    font-size: 12px;
+}
 
-        .footer-logo img {
-            width: 55px;
-        }
+/* =====================================================
+   ANIMATION
+===================================================== */
 
-        .footer-logo h3 {
-            font-size: 22px;
-        }
+.reveal {
+    opacity: 0;
 
-        .footer-logo span {
-            color: var(--green);
-        }
+    transform: translateY(25px);
 
-        footer p {
-            color: #666;
-        }
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
 
-        .copyright {
-            text-align: center;
+.reveal.visible {
+    opacity: 1;
 
-            padding-top: 25px;
+    transform: translateY(0);
+}
 
-            border-top: 1px solid #181818;
+/* =====================================================
+   MOBILE
+===================================================== */
 
-            color: #555;
+@media(max-width: 950px) {
 
-            font-size: 13px;
-        }
+    nav ul {
+        display: none;
+    }
 
-        /* =========================
-           SCROLL ANIMATIONS
-        ========================= */
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
 
-        .reveal {
-            opacity: 0;
+    .hero-text {
+        text-align: center;
+    }
 
-            transform: translateY(30px);
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-            transition:
-                opacity .7s ease,
-                transform .7s ease;
-        }
+    .buttons {
+        justify-content: center;
+    }
 
-        .reveal.visible {
-            opacity: 1;
+    .hero-image {
+        height: 450px;
 
-            transform: translateY(0);
-        }
+        border-left: none;
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        border-top: 2px solid var(--green);
+    }
 
-        @media (max-width: 1000px) {
+    .problem-layout,
+    .trimmer-layout,
+    .product-layout,
+    .adjustment-layout {
+        grid-template-columns: 1fr;
+    }
 
-            nav ul {
-                gap: 15px;
-            }
+    .problem-intro {
+        text-align: center;
+    }
 
-            .hero-content {
-                gap: 35px;
-            }
-        }
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
 
-        @media (max-width: 850px) {
+    .trimmer-photo {
+        height: 450px;
+    }
 
-            nav ul {
-                display: none;
-            }
+    .how-grid {
+        grid-template-columns: 1fr;
+    }
 
-            .hero-content {
-                grid-template-columns: 1fr;
+    .footer-top {
+        flex-direction: column;
 
-                text-align: center;
-            }
+        gap: 20px;
 
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
+        text-align: center;
+    }
+}
 
-            .hero-buttons {
-                justify-content: center;
-            }
+@media(max-width: 550px) {
 
-            .product-display {
-                min-height: 350px;
-            }
+    section {
+        padding: 75px 5%;
+    }
 
-            .stats {
-                grid-template-columns: 1fr;
-            }
+    .hero {
+        padding-top: 80px;
+    }
 
-            .stat {
-                border-right: none;
+    .hero h1 {
+        font-size: 55px;
 
-                border-bottom: 1px solid #222;
+        letter-spacing: -3px;
+    }
 
-                padding: 20px;
-            }
+    .hero-image {
+        height: 350px;
+    }
 
-            .stat:last-child {
-                border-bottom: none;
-            }
+    .stats {
+        grid-template-columns: 1fr;
+    }
 
-            .problem-grid,
-            .steps {
-                grid-template-columns: 1fr;
-            }
+    .stat {
+        border-right: none;
 
-            .product-grid,
-            .trimmer-showcase,
-            .adjustment-container {
-                grid-template-columns: 1fr;
+        border-bottom: 1px solid #222;
+    }
 
-                gap: 45px;
-            }
+    .stat:last-child {
+        border-bottom: none;
+    }
 
-            .trimmer-visual,
-            .adjustment-diagram {
-                min-height: 400px;
-            }
+    .trimmer-photo,
+    .adjustment-photo {
+        height: 350px;
+    }
 
-            .footer-top {
-                flex-direction: column;
+    .product-photo {
+        min-height: 350px;
+    }
 
-                gap: 25px;
+    .product-photo img {
+        min-height: 350px;
+    }
 
-                text-align: center;
-            }
-        }
+}
 
-        @media (max-width: 500px) {
+</style>
 
-            nav {
-                padding: 14px 5%;
-            }
-
-            .nav-logo {
-                font-size: 18px;
-            }
-
-            .nav-logo img {
-                width: 40px;
-                height: 40px;
-            }
-
-            .nav-button {
-                padding: 9px 14px;
-
-                font-size: 13px;
-            }
-
-            .hero h1 {
-                letter-spacing: -3px;
-            }
-
-            .wheel {
-                width: 230px;
-                height: 230px;
-            }
-
-            .product-image {
-                min-height: 350px;
-            }
-
-            .big-wheel {
-                width: 220px;
-                height: 220px;
-            }
-
-            .trimmer-visual {
-                min-height: 330px;
-            }
-
-            .adjustment-diagram {
-                min-height: 350px;
-            }
-        }
-
-    </style>
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      NAVIGATION
-========================= -->
+===================================================== -->
 
 <nav>
 
@@ -1354,16 +1228,16 @@
 </nav>
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <header class="hero">
 
     <div class="hero-content">
 
 
-        <div>
+        <div class="hero-text">
 
             <div class="tag">
                 BUILT TO WORK SMARTER
@@ -1378,17 +1252,17 @@
 
 
             <p>
-                Meet the TrimWorks wheel — an innovative attachment
-                designed to support the weight of your string trimmer
-                and make trimming more comfortable and less tiring.
+                The TrimWorks wheel is an innovative attachment
+                designed to help support the weight of your string
+                trimmer and make trimming more comfortable and less tiring.
             </p>
 
 
-            <div class="hero-buttons">
+            <div class="buttons">
 
                 <a
                     href="#product"
-                    class="btn btn-primary"
+                    class="btn btn-green"
                 >
                     Explore the Product →
                 </a>
@@ -1396,7 +1270,7 @@
 
                 <a
                     href="#how"
-                    class="btn btn-secondary"
+                    class="btn btn-outline"
                 >
                     See How It Works
                 </a>
@@ -1406,17 +1280,14 @@
         </div>
 
 
-        <!-- HERO WHEEL -->
+        <!-- REAL PRODUCT IMAGE -->
 
-        <div class="product-display">
+        <div class="hero-image">
 
-            <div class="glow"></div>
-
-            <div class="wheel"></div>
-
-            <div class="wheel-label">
-                TRIMWORKS WHEEL
-            </div>
+            <img
+                src="hero-trimmer.jpg"
+                alt="TrimWorks wheel attached to a string trimmer on grass"
+            >
 
         </div>
 
@@ -1425,17 +1296,17 @@
 </header>
 
 
-<!-- =========================
+<!-- =====================================================
      STATS
-========================= -->
+===================================================== -->
 
 <div class="stats">
 
     <div class="stat">
 
-        <h3>
+        <div class="stat-number">
             01
-        </h3>
+        </div>
 
         <p>
             Simple Attachment
@@ -1446,12 +1317,12 @@
 
     <div class="stat">
 
-        <h3>
+        <div class="stat-number">
             02
-        </h3>
+        </div>
 
         <p>
-            Less Weight on Your Arms
+            Less Weight to Hold
         </p>
 
     </div>
@@ -1459,12 +1330,12 @@
 
     <div class="stat">
 
-        <h3>
+        <div class="stat-number">
             03
-        </h3>
+        </div>
 
         <p>
-            Built for Smarter Trimming
+            Smarter Trimming
         </p>
 
     </div>
@@ -1472,91 +1343,96 @@
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      PROBLEM
-========================= -->
+===================================================== -->
 
 <section
     class="problem"
     id="problem"
 >
 
-    <div class="section-title">
-
-        <span>
-            THE PROBLEM
-        </span>
+    <div class="problem-layout">
 
 
-        <h2>
-            Trimming shouldn't<br>
-            wear you out.
-        </h2>
+        <div class="problem-intro">
 
-
-        <p>
-            String trimmers can become tiring to hold and control,
-            especially during long jobs. TrimWorks is designed around
-            a simple idea: support the tool so the person doesn't have
-            to carry all of its weight.
-        </p>
-
-    </div>
-
-
-    <div class="problem-grid">
-
-
-        <div class="problem-card reveal">
-
-            <div class="icon">
-                💪
+            <div class="tag">
+                THE PROBLEM
             </div>
 
-            <h3>
-                Arm Fatigue
-            </h3>
+
+            <h2>
+                Trimming shouldn't<br>
+                <span>wear you out.</span>
+            </h2>
+
 
             <p>
-                Holding a trimmer for extended periods can leave
-                your arms and shoulders exhausted.
+                String trimmers can become tiring to hold and control,
+                especially during longer jobs. TrimWorks is designed
+                around a simple idea: support the tool so the person
+                doesn't have to carry all of its weight.
             </p>
 
         </div>
 
 
-        <div class="problem-card reveal">
+        <div class="problem-grid">
 
-            <div class="icon">
-                🧍
+
+            <div class="problem-card reveal">
+
+                <div class="problem-icon">
+                    💪
+                </div>
+
+                <h3>
+                    Arm Fatigue
+                </h3>
+
+                <p>
+                    Holding a trimmer for extended periods can leave
+                    your arms and shoulders tired.
+                </p>
+
             </div>
 
-            <h3>
-                Back Strain
-            </h3>
 
-            <p>
-                Repeated trimming can be uncomfortable when you're
-                constantly supporting and maneuvering the machine.
-            </p>
+            <div class="problem-card reveal">
 
-        </div>
+                <div class="problem-icon">
+                    🧍
+                </div>
 
+                <h3>
+                    Back Strain
+                </h3>
 
-        <div class="problem-card reveal">
+                <p>
+                    Repeated trimming can be uncomfortable when you're
+                    constantly supporting and maneuvering the machine.
+                </p>
 
-            <div class="icon">
-                ⏱️
             </div>
 
-            <h3>
-                Long Jobs
-            </h3>
 
-            <p>
-                The longer you work, the more noticeable the weight
-                and fatigue can become.
-            </p>
+            <div class="problem-card reveal">
+
+                <div class="problem-icon">
+                    ⏱
+                </div>
+
+                <h3>
+                    Long Jobs
+                </h3>
+
+                <p>
+                    The longer you work, the more noticeable the
+                    weight and fatigue can become.
+                </p>
+
+            </div>
 
         </div>
 
@@ -1565,233 +1441,29 @@
 </section>
 
 
-<!-- =========================
-     TRIMMER SHOWCASE
-========================= -->
+<!-- =====================================================
+     THE TRIMMER
+===================================================== -->
 
 <section
     class="trimmer-section"
     id="trimmer"
 >
 
-    <div class="trimmer-showcase">
+    <div class="trimmer-layout">
 
 
-        <!-- GREEN + BLACK TRIMMER -->
+        <div class="trimmer-photo reveal">
 
-        <div class="trimmer-visual reveal">
-
-            <svg
-                class="trimmer-svg"
-                viewBox="0 0 700 500"
-                xmlns="http://www.w3.org/2000/svg"
+            <img
+                src="trimmer-action.jpg"
+                alt="String trimmer using the TrimWorks support wheel"
             >
-
-                <!-- Handle -->
-
-                <rect
-                    x="470"
-                    y="65"
-                    width="110"
-                    height="65"
-                    rx="18"
-                    fill="#151515"
-                    stroke="#39ff14"
-                    stroke-width="5"
-                />
-
-
-                <!-- Motor housing -->
-
-                <path
-                    d="M400 100
-                       L500 100
-                       L535 175
-                       L470 220
-                       L395 180
-                       Z"
-                    fill="#111"
-                    stroke="#39ff14"
-                    stroke-width="6"
-                />
-
-
-                <!-- Green motor highlight -->
-
-                <path
-                    d="M425 115
-                       L485 115
-                       L505 165
-                       L470 185
-                       L425 160
-                       Z"
-                    fill="#39ff14"
-                    opacity=".9"
-                />
-
-
-                <!-- Main shaft -->
-
-                <rect
-                    x="180"
-                    y="195"
-                    width="260"
-                    height="25"
-                    rx="12"
-                    fill="#292929"
-                    stroke="#39ff14"
-                    stroke-width="4"
-                    transform="rotate(-8 180 195)"
-                />
-
-
-                <!-- Shaft highlight -->
-
-                <rect
-                    x="190"
-                    y="200"
-                    width="230"
-                    height="7"
-                    rx="4"
-                    fill="#39ff14"
-                    transform="rotate(-8 190 200)"
-                />
-
-
-                <!-- Trimmer head -->
-
-                <ellipse
-                    cx="125"
-                    cy="250"
-                    rx="80"
-                    ry="55"
-                    fill="#111"
-                    stroke="#39ff14"
-                    stroke-width="6"
-                />
-
-
-                <!-- Cutting head center -->
-
-                <circle
-                    cx="125"
-                    cy="250"
-                    r="27"
-                    fill="#39ff14"
-                />
-
-
-                <circle
-                    cx="125"
-                    cy="250"
-                    r="12"
-                    fill="#050505"
-                />
-
-
-                <!-- Cutting lines -->
-
-                <path
-                    d="M45 250 L15 225"
-                    stroke="#39ff14"
-                    stroke-width="6"
-                    stroke-linecap="round"
-                />
-
-
-                <path
-                    d="M205 250 L235 225"
-                    stroke="#39ff14"
-                    stroke-width="6"
-                    stroke-linecap="round"
-                />
-
-
-                <!-- SUPPORT WHEEL -->
-
-                <circle
-                    cx="335"
-                    cy="320"
-                    r="65"
-                    fill="#080808"
-                    stroke="#333"
-                    stroke-width="20"
-                />
-
-
-                <circle
-                    cx="335"
-                    cy="320"
-                    r="45"
-                    fill="none"
-                    stroke="#39ff14"
-                    stroke-width="6"
-                />
-
-
-                <circle
-                    cx="335"
-                    cy="320"
-                    r="14"
-                    fill="#39ff14"
-                />
-
-
-                <!-- Wheel support arm -->
-
-                <path
-                    d="M335 255 L350 200"
-                    stroke="#39ff14"
-                    stroke-width="12"
-                    stroke-linecap="round"
-                />
-
-
-                <!-- Adjustment joint -->
-
-                <circle
-                    cx="350"
-                    cy="200"
-                    r="18"
-                    fill="#111"
-                    stroke="#39ff14"
-                    stroke-width="5"
-                />
-
-
-                <circle
-                    cx="350"
-                    cy="200"
-                    r="6"
-                    fill="#39ff14"
-                />
-
-
-                <!-- Brand lines -->
-
-                <path
-                    d="M420 280 L570 280"
-                    stroke="#39ff14"
-                    stroke-width="4"
-                    opacity=".4"
-                />
-
-
-                <path
-                    d="M420 295 L520 295"
-                    stroke="#39ff14"
-                    stroke-width="4"
-                    opacity=".25"
-                />
-
-            </svg>
 
         </div>
 
 
-        <!-- TRIMMER DESCRIPTION -->
-
-        <div class="trimmer-info reveal">
+        <div class="trimmer-copy reveal">
 
             <div class="tag">
                 THE TRIMWORKS SYSTEM
@@ -1811,17 +1483,17 @@
             </p>
 
 
-            <div class="trimmer-feature">
+            <div class="feature-row">
 
-                <div class="trimmer-feature-number">
+                <div class="feature-number">
                     01
                 </div>
 
                 <div>
 
-                    <h4>
+                    <h3>
                         Support the Weight
-                    </h4>
+                    </h3>
 
                     <p>
                         The wheel helps support the trimmer while
@@ -1833,17 +1505,17 @@
             </div>
 
 
-            <div class="trimmer-feature">
+            <div class="feature-row">
 
-                <div class="trimmer-feature-number">
+                <div class="feature-number">
                     02
                 </div>
 
                 <div>
 
-                    <h4>
+                    <h3>
                         Adjust the Angle
-                    </h4>
+                    </h3>
 
                     <p>
                         Set the attachment to the position that works
@@ -1855,17 +1527,17 @@
             </div>
 
 
-            <div class="trimmer-feature">
+            <div class="feature-row">
 
-                <div class="trimmer-feature-number">
+                <div class="feature-number">
                     03
                 </div>
 
                 <div>
 
-                    <h4>
+                    <h3>
                         Control Your Cut
-                    </h4>
+                    </h3>
 
                     <p>
                         Keep the cutting head positioned where you
@@ -1883,43 +1555,51 @@
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      PRODUCT
-========================= -->
+===================================================== -->
 
 <section
-    class="product-section"
+    class="product"
     id="product"
 >
 
-    <div class="product-grid">
+    <div class="product-layout">
 
 
-        <div class="product-image reveal">
+        <div class="product-photo reveal">
 
-            <div class="big-wheel"></div>
+            <img
+                src="wheel-closeup.jpg"
+                alt="Close-up of the TrimWorks support wheel"
+            >
 
         </div>
 
 
-        <div class="product-info reveal">
+        <div class="product-copy reveal">
+
+            <div class="tag">
+                THE PRODUCT
+            </div>
+
 
             <h2>
                 A small wheel.<br>
-                A <span>big difference.</span>
+                <span>A big difference.</span>
             </h2>
 
 
             <p>
                 TrimWorks attaches a support wheel to a string trimmer,
-                allowing the wheel to help carry the weight while you
-                guide the tool.
+                helping carry some of the tool's weight while you guide
+                the machine across the ground.
             </p>
 
 
-            <div class="feature">
+            <div class="check">
 
-                <div class="feature-check">
+                <div class="check-icon">
                     ✓
                 </div>
 
@@ -1938,9 +1618,9 @@
             </div>
 
 
-            <div class="feature">
+            <div class="check">
 
-                <div class="feature-check">
+                <div class="check-icon">
                     ✓
                 </div>
 
@@ -1960,9 +1640,9 @@
             </div>
 
 
-            <div class="feature">
+            <div class="check">
 
-                <div class="feature-check">
+                <div class="check-icon">
                     ✓
                 </div>
 
@@ -1988,36 +1668,29 @@
 </section>
 
 
-<!-- =========================
-     ADJUSTMENT / EDGING
-========================= -->
+<!-- =====================================================
+     ADJUSTMENT
+===================================================== -->
 
 <section
-    class="adjustment-section"
+    class="adjustment"
     id="adjustment"
 >
 
-    <div class="adjustment-container">
+    <div class="adjustment-layout">
 
 
-        <!-- ADJUSTMENT DIAGRAM -->
+        <div class="adjustment-photo reveal">
 
-        <div class="adjustment-diagram reveal">
-
-            <div class="adjustment-wheel"></div>
-
-            <div class="adjustment-arm"></div>
-
-            <div class="adjustment-marker">
-                ADJUSTABLE
-            </div>
+            <img
+                src="adjustment.jpg"
+                alt="TrimWorks adjustable wheel attachment"
+            >
 
         </div>
 
 
-        <!-- ADJUSTMENT DESCRIPTION -->
-
-        <div class="adjustment-info reveal">
+        <div class="adjustment-copy reveal">
 
             <div class="tag">
                 SMART ADJUSTMENT
@@ -2025,77 +1698,71 @@
 
 
             <h2>
-                Find your <span>perfect angle.</span>
+                Find your<br>
+                <span>perfect angle.</span>
             </h2>
 
 
             <p>
-                Not every trimming job is the same. That's why
-                TrimWorks is designed with an adjustable attachment
-                that lets you change the position of the trimmer
-                relative to the support wheel.
+                Not every trimming job is the same. The TrimWorks
+                attachment is designed so you can adjust the position
+                of the trimmer relative to the support wheel.
             </p>
 
 
-            <div class="adjustment-points">
+            <div class="adjustment-point">
+
+                <strong>
+                    🔧 Set the Position
+                </strong>
+
+                <span>
+                    Adjust the attachment to change the working angle
+                    of the trimmer.
+                </span>
+
+            </div>
 
 
-                <div class="adjustment-point">
+            <div class="adjustment-point">
 
-                    <strong>
-                        🔧 Set the Position
-                    </strong>
+                <strong>
+                    📐 Create a Cleaner Edge
+                </strong>
 
-                    <span>
-                        Adjust the attachment to change the working
-                        angle of the trimmer.
-                    </span>
+                <span>
+                    Position the trimmer so the cutting head can follow
+                    the edge of sidewalks, driveways, flower beds,
+                    and other boundaries.
+                </span>
 
-                </div>
-
-
-                <div class="adjustment-point">
-
-                    <strong>
-                        📐 Create a Cleaner Edge
-                    </strong>
-
-                    <span>
-                        Position the trimmer so the cutting head can
-                        follow the edge of sidewalks, driveways,
-                        flower beds, and other boundaries.
-                    </span>
-
-                </div>
+            </div>
 
 
-                <div class="adjustment-point">
+            <div class="adjustment-point">
 
-                    <strong>
-                        🔒 Lock It In
-                    </strong>
+                <strong>
+                    🔒 Lock It In
+                </strong>
 
-                    <span>
-                        Once the desired position is found, secure
-                        the adjustment so the setup stays consistent
-                        while you work.
-                    </span>
+                <span>
+                    Once you find the desired position, secure the
+                    adjustment so the setup stays consistent.
+                </span>
 
-                </div>
+            </div>
 
 
-                <div class="adjustment-point">
+            <div class="adjustment-point">
 
-                    <strong>
-                        ⚡ Adapt to the Job
-                    </strong>
+                <strong>
+                    ⚡ Adapt to the Job
+                </strong>
 
-                    <span>
-                        Switch the position when moving between
-                        normal trimming and edging work.
-                    </span>
-
-                </div>
+                <span>
+                    Change the position when moving between normal
+                    trimming and edging work.
+                </span>
 
             </div>
 
@@ -2106,85 +1773,135 @@
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      HOW IT WORKS
-========================= -->
+===================================================== -->
 
-<section id="how">
+<section
+    class="how"
+    id="how"
+>
 
-    <div class="section-title">
+    <div class="section-heading">
 
-        <span>
+        <small>
             HOW IT WORKS
-        </span>
+        </small>
 
 
         <h2>
-            Simple. Smart. Trim.
+            Simple. Smart. <span>Trim.</span>
         </h2>
 
 
         <p>
-            The TrimWorks concept is built around making the job easier
-            without making the equipment complicated.
+            Get the TrimWorks system set up and get to work.
         </p>
 
     </div>
 
 
-    <div class="steps">
+    <div class="how-grid">
 
 
-        <div class="step reveal">
+        <!-- STEP 1 -->
 
-            <div class="step-number">
-                01
+        <div class="how-card reveal">
+
+            <div class="how-photo">
+
+                <img
+                    src="how-attach.jpg"
+                    alt="Attaching the TrimWorks wheel"
+                >
+
             </div>
 
-            <h3>
-                Attach
-            </h3>
 
-            <p>
-                Secure the TrimWorks wheel and attachment mechanism
-                to your string trimmer.
-            </p>
+            <div class="how-text">
+
+                <div class="step">
+                    STEP 01
+                </div>
+
+                <h3>
+                    Attach
+                </h3>
+
+                <p>
+                    Secure the TrimWorks wheel and attachment mechanism
+                    to your string trimmer.
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="step reveal">
+        <!-- STEP 2 -->
 
-            <div class="step-number">
-                02
+        <div class="how-card reveal">
+
+            <div class="how-photo">
+
+                <img
+                    src="how-adjust.jpg"
+                    alt="Adjusting the TrimWorks wheel"
+                >
+
             </div>
 
-            <h3>
-                Adjust
-            </h3>
 
-            <p>
-                Position the wheel so it supports the trimmer while
-                still allowing you to control the cutting head.
-            </p>
+            <div class="how-text">
+
+                <div class="step">
+                    STEP 02
+                </div>
+
+                <h3>
+                    Adjust
+                </h3>
+
+                <p>
+                    Position the wheel for the right working angle
+                    and secure the adjustment.
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="step reveal">
+        <!-- STEP 3 -->
 
-            <div class="step-number">
-                03
+        <div class="how-card reveal">
+
+            <div class="how-photo">
+
+                <img
+                    src="how-trim.jpg"
+                    alt="Using the TrimWorks wheel while trimming"
+                >
+
             </div>
 
-            <h3>
-                Trim
-            </h3>
 
-            <p>
-                Roll the support wheel along the ground while you
-                guide the trimmer and get the job done.
-            </p>
+            <div class="how-text">
+
+                <div class="step">
+                    STEP 03
+                </div>
+
+                <h3>
+                    Trim
+                </h3>
+
+                <p>
+                    Roll the wheel along the ground while guiding
+                    the trimmer for a controlled cut.
+                </p>
+
+            </div>
 
         </div>
 
@@ -2193,9 +1910,9 @@
 </section>
 
 
-<!-- =========================
-     FINAL CTA
-========================= -->
+<!-- =====================================================
+     CALL TO ACTION
+===================================================== -->
 
 <section
     class="cta"
@@ -2215,7 +1932,7 @@
 
     <a
         href="mailto:trimworks@example.com"
-        class="btn btn-primary"
+        class="btn btn-green"
     >
         Contact TrimWorks →
     </a>
@@ -2223,16 +1940,16 @@
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
     <div class="footer-top">
 
 
-        <div class="footer-logo">
+        <div class="footer-brand">
 
             <img
                 src="logo.png"
@@ -2247,7 +1964,7 @@
                 </h3>
 
                 <p>
-                    Built to Work Smarter.
+                    BUILT TO WORK SMARTER.
                 </p>
 
             </div>
@@ -2263,57 +1980,55 @@
 
 
     <div class="copyright">
+
         © 2026 TrimWorks. All rights reserved.
+
     </div>
 
 </footer>
 
 
-<!-- =========================
+<!-- =====================================================
      JAVASCRIPT
-========================= -->
+===================================================== -->
 
 <script>
 
-    /*
-       SCROLL REVEAL ANIMATION
-    */
-
-    const elements =
-        document.querySelectorAll(".reveal");
+const revealElements =
+    document.querySelectorAll(".reveal");
 
 
-    const observer =
-        new IntersectionObserver(
+const observer =
+    new IntersectionObserver(
 
-            entries => {
+        (entries) => {
 
-                entries.forEach(entry => {
+            entries.forEach((entry) => {
 
-                    if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-                        entry.target.classList.add("visible");
+                    entry.target.classList.add("visible");
 
-                        observer.unobserve(entry.target);
+                    observer.unobserve(entry.target);
 
-                    }
+                }
 
-                });
+            });
 
-            },
+        },
 
-            {
-                threshold: 0.15
-            }
+        {
+            threshold: 0.15
+        }
 
-        );
+    );
 
 
-    elements.forEach(element => {
+revealElements.forEach((element) => {
 
-        observer.observe(element);
+    observer.observe(element);
 
-    });
+});
 
 </script>
 
