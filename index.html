@@ -6,9 +6,14 @@
 
     <title>TrimWorks | Built to Work Smarter</title>
 
-    <meta name="description" content="TrimWorks makes string trimming easier with innovative wheel attachments designed to help support the weight of your trimmer.">
+    <meta name="description" content="TrimWorks makes string trimming easier with an innovative wheel attachment designed to help support the weight of your trimmer.">
 
     <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -50,7 +55,7 @@
 
             padding: 18px 6%;
 
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.78);
             backdrop-filter: blur(15px);
 
             border-bottom: 1px solid rgba(57, 255, 20, 0.15);
@@ -60,6 +65,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+
             font-size: 22px;
             font-weight: 900;
             letter-spacing: 1px;
@@ -78,7 +84,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 28px;
         }
 
         nav a {
@@ -94,15 +100,19 @@
 
         .nav-button {
             padding: 12px 22px;
+
             border: 1px solid var(--green);
             border-radius: 8px;
+
             color: var(--green);
         }
 
         .nav-button:hover {
             background: var(--green);
             color: black;
-            box-shadow: 0 0 25px rgba(57, 255, 20, 0.5);
+
+            box-shadow:
+                0 0 25px rgba(57, 255, 20, 0.5);
         }
 
         /* =========================
@@ -119,7 +129,7 @@
             position: relative;
             overflow: hidden;
 
-            padding: 130px 7% 80px;
+            padding: 140px 7% 80px;
 
             background:
                 radial-gradient(
@@ -134,6 +144,7 @@
             content: "";
 
             position: absolute;
+
             width: 600px;
             height: 600px;
 
@@ -151,6 +162,7 @@
 
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
+
             gap: 70px;
 
             align-items: center;
@@ -181,8 +193,11 @@
 
         .hero h1 {
             font-size: clamp(55px, 7vw, 100px);
+
             line-height: 0.95;
+
             font-weight: 1000;
+
             letter-spacing: -5px;
 
             margin-bottom: 30px;
@@ -190,13 +205,16 @@
 
         .hero h1 span {
             color: var(--green);
+
             text-shadow:
                 0 0 20px rgba(57, 255, 20, 0.35);
         }
 
         .hero p {
             color: #bdbdbd;
+
             font-size: 20px;
+
             line-height: 1.7;
 
             max-width: 650px;
@@ -228,7 +246,8 @@
             background: var(--green);
             color: black;
 
-            box-shadow: 0 0 25px rgba(57, 255, 20, 0.2);
+            box-shadow:
+                0 0 25px rgba(57, 255, 20, 0.2);
         }
 
         .btn-primary:hover {
@@ -250,7 +269,7 @@
         }
 
         /* =========================
-           PRODUCT VISUAL
+           HERO WHEEL
         ========================= */
 
         .product-display {
@@ -314,7 +333,8 @@
 
             transform: translate(-50%, -50%);
 
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+            box-shadow:
+                0 0 30px rgba(57, 255, 20, 0.4);
         }
 
         .wheel::after {
@@ -352,6 +372,7 @@
         }
 
         @keyframes float {
+
             0%, 100% {
                 transform: translateY(0) rotate(0deg);
             }
@@ -372,6 +393,7 @@
             background: #080808;
 
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
 
             padding: 35px 7%;
@@ -391,7 +413,9 @@
 
         .stat h3 {
             color: var(--green);
+
             font-size: 35px;
+
             margin-bottom: 5px;
         }
 
@@ -400,7 +424,7 @@
         }
 
         /* =========================
-           SECTIONS
+           GENERAL SECTIONS
         ========================= */
 
         section {
@@ -417,19 +441,25 @@
 
         .section-title span {
             color: var(--green);
+
             font-weight: bold;
+
             letter-spacing: 3px;
+
             font-size: 13px;
         }
 
         .section-title h2 {
             font-size: clamp(40px, 5vw, 65px);
+
             margin: 15px 0;
         }
 
         .section-title p {
             color: #999;
+
             font-size: 18px;
+
             line-height: 1.7;
         }
 
@@ -438,11 +468,7 @@
         ========================= */
 
         .problem {
-            background:
-                linear-gradient(
-                    rgba(0,0,0,.95),
-                    rgba(0,0,0,.95)
-                );
+            background: #050505;
         }
 
         .problem-grid {
@@ -460,11 +486,12 @@
         .problem-card {
             padding: 35px;
 
-            background: linear-gradient(
-                145deg,
-                #111,
-                #080808
-            );
+            background:
+                linear-gradient(
+                    145deg,
+                    #111,
+                    #080808
+                );
 
             border: 1px solid #222;
 
@@ -485,17 +512,168 @@
 
         .icon {
             font-size: 40px;
+
             margin-bottom: 20px;
         }
 
         .problem-card h3 {
             margin-bottom: 12px;
+
             font-size: 22px;
         }
 
         .problem-card p {
             color: #888;
+
             line-height: 1.7;
+        }
+
+        /* =========================
+           TRIMMER SHOWCASE
+        ========================= */
+
+        .trimmer-section {
+            background: #050505;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .trimmer-showcase {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .trimmer-visual {
+            min-height: 500px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            border-radius: 25px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(57,255,20,.13),
+                    transparent 55%
+                ),
+                #080808;
+
+            border: 1px solid #222;
+
+            overflow: hidden;
+        }
+
+        .trimmer-visual::before {
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(57,255,20,.15);
+
+            box-shadow:
+                0 0 80px rgba(57,255,20,.08);
+        }
+
+        .trimmer-svg {
+            width: 90%;
+
+            max-width: 550px;
+
+            position: relative;
+
+            z-index: 2;
+
+            filter:
+                drop-shadow(
+                    0 0 12px rgba(57,255,20,.12)
+                );
+        }
+
+        .trimmer-info h2 {
+            font-size: clamp(40px, 5vw, 65px);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+        }
+
+        .trimmer-info h2 span {
+            color: var(--green);
+
+            text-shadow:
+                0 0 20px rgba(57,255,20,.25);
+        }
+
+        .trimmer-info > p {
+            color: #999;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .trimmer-feature {
+            display: flex;
+
+            gap: 15px;
+
+            margin-bottom: 22px;
+        }
+
+        .trimmer-feature-number {
+            min-width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 8px;
+
+            background: rgba(57,255,20,.1);
+
+            border: 1px solid rgba(57,255,20,.25);
+
+            color: var(--green);
+
+            font-weight: 900;
+        }
+
+        .trimmer-feature h4 {
+            margin-bottom: 5px;
+
+            font-size: 18px;
+        }
+
+        .trimmer-feature p {
+            color: #777;
+
+            line-height: 1.6;
         }
 
         /* =========================
@@ -536,7 +714,9 @@
                 #050505;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
         }
 
@@ -552,10 +732,33 @@
                 0 0 0 4px #444,
                 inset 0 0 30px #000,
                 0 0 60px rgba(57,255,20,.2);
+
+            position: relative;
+        }
+
+        .big-wheel::before {
+            content: "";
+
+            position: absolute;
+
+            width: 90px;
+            height: 90px;
+
+            border-radius: 50%;
+
+            border: 7px solid var(--green);
+
+            background: #050505;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
         }
 
         .product-info h2 {
             font-size: 50px;
+
             margin-bottom: 20px;
         }
 
@@ -565,13 +768,17 @@
 
         .product-info > p {
             color: #999;
+
             line-height: 1.8;
+
             font-size: 17px;
+
             margin-bottom: 30px;
         }
 
         .feature {
             display: flex;
+
             gap: 15px;
 
             margin-bottom: 20px;
@@ -582,6 +789,7 @@
             height: 30px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
@@ -600,6 +808,186 @@
 
         .feature p {
             color: #777;
+
+            line-height: 1.5;
+        }
+
+        /* =========================
+           ADJUSTMENT SECTION
+        ========================= */
+
+        .adjustment-section {
+            background: #080808;
+        }
+
+        .adjustment-container {
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .adjustment-diagram {
+            min-height: 430px;
+
+            border-radius: 20px;
+
+            border: 1px solid #222;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(57,255,20,.08),
+                    transparent 60%
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .adjustment-wheel {
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            border: 22px solid #202020;
+
+            box-shadow:
+                0 0 0 3px #444,
+                0 0 45px rgba(57,255,20,.2);
+
+            position: relative;
+        }
+
+        .adjustment-wheel::after {
+            content: "";
+
+            position: absolute;
+
+            width: 75px;
+            height: 75px;
+
+            border-radius: 50%;
+
+            background: #080808;
+
+            border: 5px solid var(--green);
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+
+        .adjustment-arm {
+            position: absolute;
+
+            width: 190px;
+            height: 16px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #222,
+                    var(--green)
+                );
+
+            border-radius: 20px;
+
+            transform: rotate(-22deg);
+
+            top: 125px;
+            right: 70px;
+
+            box-shadow:
+                0 0 15px rgba(57,255,20,.2);
+        }
+
+        .adjustment-marker {
+            position: absolute;
+
+            top: 55px;
+            right: 45px;
+
+            padding: 10px 15px;
+
+            background: var(--green);
+
+            color: #000;
+
+            border-radius: 7px;
+
+            font-weight: 900;
+
+            font-size: 13px;
+        }
+
+        .adjustment-info h2 {
+            font-size: clamp(40px, 5vw, 60px);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+        }
+
+        .adjustment-info h2 span {
+            color: var(--green);
+        }
+
+        .adjustment-info > p {
+            color: #999;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .adjustment-points {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .adjustment-point {
+            padding: 18px;
+
+            border-left: 3px solid var(--green);
+
+            background: #0d0d0d;
+
+            border-radius: 0 8px 8px 0;
+        }
+
+        .adjustment-point strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: white;
+        }
+
+        .adjustment-point span {
+            color: #777;
+
             line-height: 1.5;
         }
 
@@ -649,6 +1037,7 @@
 
         .step p {
             color: #888;
+
             line-height: 1.6;
         }
 
@@ -714,7 +1103,9 @@
 
         .footer-logo {
             display: flex;
+
             align-items: center;
+
             gap: 12px;
         }
 
@@ -747,8 +1138,39 @@
         }
 
         /* =========================
+           SCROLL ANIMATIONS
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+        /* =========================
            RESPONSIVE
         ========================= */
+
+        @media (max-width: 1000px) {
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero-content {
+                gap: 35px;
+            }
+        }
 
         @media (max-width: 850px) {
 
@@ -758,6 +1180,7 @@
 
             .hero-content {
                 grid-template-columns: 1fr;
+
                 text-align: center;
             }
 
@@ -780,7 +1203,9 @@
 
             .stat {
                 border-right: none;
+
                 border-bottom: 1px solid #222;
+
                 padding: 20px;
             }
 
@@ -793,19 +1218,48 @@
                 grid-template-columns: 1fr;
             }
 
-            .product-grid {
+            .product-grid,
+            .trimmer-showcase,
+            .adjustment-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
+
+                gap: 45px;
+            }
+
+            .trimmer-visual,
+            .adjustment-diagram {
+                min-height: 400px;
             }
 
             .footer-top {
                 flex-direction: column;
+
                 gap: 25px;
+
                 text-align: center;
             }
         }
 
         @media (max-width: 500px) {
+
+            nav {
+                padding: 14px 5%;
+            }
+
+            .nav-logo {
+                font-size: 18px;
+            }
+
+            .nav-logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .nav-button {
+                padding: 9px 14px;
+
+                font-size: 13px;
+            }
 
             .hero h1 {
                 letter-spacing: -3px;
@@ -824,11 +1278,22 @@
                 width: 220px;
                 height: 220px;
             }
+
+            .trimmer-visual {
+                min-height: 330px;
+            }
+
+            .adjustment-diagram {
+                min-height: 350px;
+            }
         }
+
     </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVIGATION
@@ -846,11 +1311,41 @@
 
     </div>
 
+
     <ul>
-        <li><a href="#problem">The Problem</a></li>
-        <li><a href="#product">The Product</a></li>
-        <li><a href="#how">How It Works</a></li>
+
+        <li>
+            <a href="#problem">
+                The Problem
+            </a>
+        </li>
+
+        <li>
+            <a href="#trimmer">
+                The Trimmer
+            </a>
+        </li>
+
+        <li>
+            <a href="#product">
+                The Product
+            </a>
+        </li>
+
+        <li>
+            <a href="#adjustment">
+                Adjustment
+            </a>
+        </li>
+
+        <li>
+            <a href="#how">
+                How It Works
+            </a>
+        </li>
+
     </ul>
+
 
     <a href="#contact" class="nav-button">
         Learn More
@@ -867,11 +1362,13 @@
 
     <div class="hero-content">
 
+
         <div>
 
             <div class="tag">
                 BUILT TO WORK SMARTER
             </div>
+
 
             <h1>
                 TAKE THE<br>
@@ -879,19 +1376,28 @@
                 OFF.
             </h1>
 
+
             <p>
                 Meet the TrimWorks wheel — an innovative attachment
                 designed to support the weight of your string trimmer
-                and make trimming easier, more comfortable, and less tiring.
+                and make trimming more comfortable and less tiring.
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="#product" class="btn btn-primary">
+                <a
+                    href="#product"
+                    class="btn btn-primary"
+                >
                     Explore the Product →
                 </a>
 
-                <a href="#how" class="btn btn-secondary">
+
+                <a
+                    href="#how"
+                    class="btn btn-secondary"
+                >
                     See How It Works
                 </a>
 
@@ -899,6 +1405,8 @@
 
         </div>
 
+
+        <!-- HERO WHEEL -->
 
         <div class="product-display">
 
@@ -924,18 +1432,41 @@
 <div class="stats">
 
     <div class="stat">
-        <h3>01</h3>
-        <p>Simple Attachment</p>
+
+        <h3>
+            01
+        </h3>
+
+        <p>
+            Simple Attachment
+        </p>
+
     </div>
 
-    <div class="stat">
-        <h3>02</h3>
-        <p>Less Weight on Your Arms</p>
-    </div>
 
     <div class="stat">
-        <h3>03</h3>
-        <p>Built for Smarter Trimming</p>
+
+        <h3>
+            02
+        </h3>
+
+        <p>
+            Less Weight on Your Arms
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h3>
+            03
+        </h3>
+
+        <p>
+            Built for Smarter Trimming
+        </p>
+
     </div>
 
 </div>
@@ -945,16 +1476,23 @@
      PROBLEM
 ========================= -->
 
-<section class="problem" id="problem">
+<section
+    class="problem"
+    id="problem"
+>
 
     <div class="section-title">
 
-        <span>THE PROBLEM</span>
+        <span>
+            THE PROBLEM
+        </span>
+
 
         <h2>
             Trimming shouldn't<br>
             wear you out.
         </h2>
+
 
         <p>
             String trimmers can become tiring to hold and control,
@@ -968,11 +1506,16 @@
 
     <div class="problem-grid">
 
-        <div class="problem-card">
 
-            <div class="icon">💪</div>
+        <div class="problem-card reveal">
 
-            <h3>Arm Fatigue</h3>
+            <div class="icon">
+                💪
+            </div>
+
+            <h3>
+                Arm Fatigue
+            </h3>
 
             <p>
                 Holding a trimmer for extended periods can leave
@@ -982,11 +1525,15 @@
         </div>
 
 
-        <div class="problem-card">
+        <div class="problem-card reveal">
 
-            <div class="icon">🧍</div>
+            <div class="icon">
+                🧍
+            </div>
 
-            <h3>Back Strain</h3>
+            <h3>
+                Back Strain
+            </h3>
 
             <p>
                 Repeated trimming can be uncomfortable when you're
@@ -996,11 +1543,15 @@
         </div>
 
 
-        <div class="problem-card">
+        <div class="problem-card reveal">
 
-            <div class="icon">⏱️</div>
+            <div class="icon">
+                ⏱️
+            </div>
 
-            <h3>Long Jobs</h3>
+            <h3>
+                Long Jobs
+            </h3>
 
             <p>
                 The longer you work, the more noticeable the weight
@@ -1015,26 +1566,349 @@
 
 
 <!-- =========================
+     TRIMMER SHOWCASE
+========================= -->
+
+<section
+    class="trimmer-section"
+    id="trimmer"
+>
+
+    <div class="trimmer-showcase">
+
+
+        <!-- GREEN + BLACK TRIMMER -->
+
+        <div class="trimmer-visual reveal">
+
+            <svg
+                class="trimmer-svg"
+                viewBox="0 0 700 500"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <!-- Handle -->
+
+                <rect
+                    x="470"
+                    y="65"
+                    width="110"
+                    height="65"
+                    rx="18"
+                    fill="#151515"
+                    stroke="#39ff14"
+                    stroke-width="5"
+                />
+
+
+                <!-- Motor housing -->
+
+                <path
+                    d="M400 100
+                       L500 100
+                       L535 175
+                       L470 220
+                       L395 180
+                       Z"
+                    fill="#111"
+                    stroke="#39ff14"
+                    stroke-width="6"
+                />
+
+
+                <!-- Green motor highlight -->
+
+                <path
+                    d="M425 115
+                       L485 115
+                       L505 165
+                       L470 185
+                       L425 160
+                       Z"
+                    fill="#39ff14"
+                    opacity=".9"
+                />
+
+
+                <!-- Main shaft -->
+
+                <rect
+                    x="180"
+                    y="195"
+                    width="260"
+                    height="25"
+                    rx="12"
+                    fill="#292929"
+                    stroke="#39ff14"
+                    stroke-width="4"
+                    transform="rotate(-8 180 195)"
+                />
+
+
+                <!-- Shaft highlight -->
+
+                <rect
+                    x="190"
+                    y="200"
+                    width="230"
+                    height="7"
+                    rx="4"
+                    fill="#39ff14"
+                    transform="rotate(-8 190 200)"
+                />
+
+
+                <!-- Trimmer head -->
+
+                <ellipse
+                    cx="125"
+                    cy="250"
+                    rx="80"
+                    ry="55"
+                    fill="#111"
+                    stroke="#39ff14"
+                    stroke-width="6"
+                />
+
+
+                <!-- Cutting head center -->
+
+                <circle
+                    cx="125"
+                    cy="250"
+                    r="27"
+                    fill="#39ff14"
+                />
+
+
+                <circle
+                    cx="125"
+                    cy="250"
+                    r="12"
+                    fill="#050505"
+                />
+
+
+                <!-- Cutting lines -->
+
+                <path
+                    d="M45 250 L15 225"
+                    stroke="#39ff14"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                />
+
+
+                <path
+                    d="M205 250 L235 225"
+                    stroke="#39ff14"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                />
+
+
+                <!-- SUPPORT WHEEL -->
+
+                <circle
+                    cx="335"
+                    cy="320"
+                    r="65"
+                    fill="#080808"
+                    stroke="#333"
+                    stroke-width="20"
+                />
+
+
+                <circle
+                    cx="335"
+                    cy="320"
+                    r="45"
+                    fill="none"
+                    stroke="#39ff14"
+                    stroke-width="6"
+                />
+
+
+                <circle
+                    cx="335"
+                    cy="320"
+                    r="14"
+                    fill="#39ff14"
+                />
+
+
+                <!-- Wheel support arm -->
+
+                <path
+                    d="M335 255 L350 200"
+                    stroke="#39ff14"
+                    stroke-width="12"
+                    stroke-linecap="round"
+                />
+
+
+                <!-- Adjustment joint -->
+
+                <circle
+                    cx="350"
+                    cy="200"
+                    r="18"
+                    fill="#111"
+                    stroke="#39ff14"
+                    stroke-width="5"
+                />
+
+
+                <circle
+                    cx="350"
+                    cy="200"
+                    r="6"
+                    fill="#39ff14"
+                />
+
+
+                <!-- Brand lines -->
+
+                <path
+                    d="M420 280 L570 280"
+                    stroke="#39ff14"
+                    stroke-width="4"
+                    opacity=".4"
+                />
+
+
+                <path
+                    d="M420 295 L520 295"
+                    stroke="#39ff14"
+                    stroke-width="4"
+                    opacity=".25"
+                />
+
+            </svg>
+
+        </div>
+
+
+        <!-- TRIMMER DESCRIPTION -->
+
+        <div class="trimmer-info reveal">
+
+            <div class="tag">
+                THE TRIMWORKS SYSTEM
+            </div>
+
+
+            <h2>
+                Your trimmer.<br>
+                <span>Reinvented.</span>
+            </h2>
+
+
+            <p>
+                TrimWorks combines a support wheel with an adjustable
+                attachment system to create a more comfortable way
+                to control your string trimmer.
+            </p>
+
+
+            <div class="trimmer-feature">
+
+                <div class="trimmer-feature-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h4>
+                        Support the Weight
+                    </h4>
+
+                    <p>
+                        The wheel helps support the trimmer while
+                        you guide it across the ground.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="trimmer-feature">
+
+                <div class="trimmer-feature-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h4>
+                        Adjust the Angle
+                    </h4>
+
+                    <p>
+                        Set the attachment to the position that works
+                        best for your trimming or edging job.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="trimmer-feature">
+
+                <div class="trimmer-feature-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h4>
+                        Control Your Cut
+                    </h4>
+
+                    <p>
+                        Keep the cutting head positioned where you
+                        need it while maintaining control of the tool.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
      PRODUCT
 ========================= -->
 
-<section class="product-section" id="product">
+<section
+    class="product-section"
+    id="product"
+>
 
     <div class="product-grid">
 
-        <div class="product-image">
+
+        <div class="product-image reveal">
 
             <div class="big-wheel"></div>
 
         </div>
 
 
-        <div class="product-info">
+        <div class="product-info reveal">
 
             <h2>
                 A small wheel.<br>
                 A <span>big difference.</span>
             </h2>
+
 
             <p>
                 TrimWorks attaches a support wheel to a string trimmer,
@@ -1045,14 +1919,20 @@
 
             <div class="feature">
 
-                <div class="feature-check">✓</div>
+                <div class="feature-check">
+                    ✓
+                </div>
 
                 <div>
-                    <h4>Support the Trimmer</h4>
+
+                    <h4>
+                        Support the Trimmer
+                    </h4>
 
                     <p>
                         Let the wheel help carry the load while trimming.
                     </p>
+
                 </div>
 
             </div>
@@ -1060,15 +1940,21 @@
 
             <div class="feature">
 
-                <div class="feature-check">✓</div>
+                <div class="feature-check">
+                    ✓
+                </div>
 
                 <div>
-                    <h4>Designed for Comfort</h4>
+
+                    <h4>
+                        Designed for Comfort
+                    </h4>
 
                     <p>
                         Reduce the amount of weight you need to hold
                         throughout the job.
                     </p>
+
                 </div>
 
             </div>
@@ -1076,15 +1962,139 @@
 
             <div class="feature">
 
-                <div class="feature-check">✓</div>
+                <div class="feature-check">
+                    ✓
+                </div>
 
                 <div>
-                    <h4>Simple Concept</h4>
+
+                    <h4>
+                        Simple Concept
+                    </h4>
 
                     <p>
                         A straightforward attachment designed to make
                         an everyday tool easier to use.
                     </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ADJUSTMENT / EDGING
+========================= -->
+
+<section
+    class="adjustment-section"
+    id="adjustment"
+>
+
+    <div class="adjustment-container">
+
+
+        <!-- ADJUSTMENT DIAGRAM -->
+
+        <div class="adjustment-diagram reveal">
+
+            <div class="adjustment-wheel"></div>
+
+            <div class="adjustment-arm"></div>
+
+            <div class="adjustment-marker">
+                ADJUSTABLE
+            </div>
+
+        </div>
+
+
+        <!-- ADJUSTMENT DESCRIPTION -->
+
+        <div class="adjustment-info reveal">
+
+            <div class="tag">
+                SMART ADJUSTMENT
+            </div>
+
+
+            <h2>
+                Find your <span>perfect angle.</span>
+            </h2>
+
+
+            <p>
+                Not every trimming job is the same. That's why
+                TrimWorks is designed with an adjustable attachment
+                that lets you change the position of the trimmer
+                relative to the support wheel.
+            </p>
+
+
+            <div class="adjustment-points">
+
+
+                <div class="adjustment-point">
+
+                    <strong>
+                        🔧 Set the Position
+                    </strong>
+
+                    <span>
+                        Adjust the attachment to change the working
+                        angle of the trimmer.
+                    </span>
+
+                </div>
+
+
+                <div class="adjustment-point">
+
+                    <strong>
+                        📐 Create a Cleaner Edge
+                    </strong>
+
+                    <span>
+                        Position the trimmer so the cutting head can
+                        follow the edge of sidewalks, driveways,
+                        flower beds, and other boundaries.
+                    </span>
+
+                </div>
+
+
+                <div class="adjustment-point">
+
+                    <strong>
+                        🔒 Lock It In
+                    </strong>
+
+                    <span>
+                        Once the desired position is found, secure
+                        the adjustment so the setup stays consistent
+                        while you work.
+                    </span>
+
+                </div>
+
+
+                <div class="adjustment-point">
+
+                    <strong>
+                        ⚡ Adapt to the Job
+                    </strong>
+
+                    <span>
+                        Switch the position when moving between
+                        normal trimming and edging work.
+                    </span>
+
                 </div>
 
             </div>
@@ -1104,11 +2114,15 @@
 
     <div class="section-title">
 
-        <span>HOW IT WORKS</span>
+        <span>
+            HOW IT WORKS
+        </span>
+
 
         <h2>
             Simple. Smart. Trim.
         </h2>
+
 
         <p>
             The TrimWorks concept is built around making the job easier
@@ -1120,13 +2134,16 @@
 
     <div class="steps">
 
-        <div class="step">
+
+        <div class="step reveal">
 
             <div class="step-number">
                 01
             </div>
 
-            <h3>Attach</h3>
+            <h3>
+                Attach
+            </h3>
 
             <p>
                 Secure the TrimWorks wheel and attachment mechanism
@@ -1136,13 +2153,15 @@
         </div>
 
 
-        <div class="step">
+        <div class="step reveal">
 
             <div class="step-number">
                 02
             </div>
 
-            <h3>Adjust</h3>
+            <h3>
+                Adjust
+            </h3>
 
             <p>
                 Position the wheel so it supports the trimmer while
@@ -1152,13 +2171,15 @@
         </div>
 
 
-        <div class="step">
+        <div class="step reveal">
 
             <div class="step-number">
                 03
             </div>
 
-            <h3>Trim</h3>
+            <h3>
+                Trim
+            </h3>
 
             <p>
                 Roll the support wheel along the ground while you
@@ -1173,21 +2194,29 @@
 
 
 <!-- =========================
-     CTA
+     FINAL CTA
 ========================= -->
 
-<section class="cta" id="contact">
+<section
+    class="cta"
+    id="contact"
+>
 
     <h2>
         WORK <span>SMARTER.</span>
     </h2>
 
+
     <p>
         TrimWorks is creating a smarter way to use a string trimmer.
-        Less weight to carry. More comfort. More time getting the job done.
+        Less weight to carry. More comfort. More control.
     </p>
 
-    <a href="mailto:trimworks@example.com" class="btn btn-primary">
+
+    <a
+        href="mailto:trimworks@example.com"
+        class="btn btn-primary"
+    >
         Contact TrimWorks →
     </a>
 
@@ -1202,11 +2231,17 @@
 
     <div class="footer-top">
 
+
         <div class="footer-logo">
 
-            <img src="logo.png" alt="TrimWorks Logo">
+            <img
+                src="logo.png"
+                alt="TrimWorks Logo"
+            >
+
 
             <div>
+
                 <h3>
                     TRIM<span>WORKS</span>
                 </h3>
@@ -1214,6 +2249,7 @@
                 <p>
                     Built to Work Smarter.
                 </p>
+
             </div>
 
         </div>
@@ -1233,49 +2269,54 @@
 </footer>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
-    // Add a subtle reveal animation when sections enter the screen
+    /*
+       SCROLL REVEAL ANIMATION
+    */
 
-    const elements = document.querySelectorAll(
-        ".problem-card, .step, .product-info, .product-image"
-    );
+    const elements =
+        document.querySelectorAll(".reveal");
 
-    const observer = new IntersectionObserver(
-        entries => {
 
-            entries.forEach(entry => {
+    const observer =
+        new IntersectionObserver(
 
-                if (entry.isIntersecting) {
+            entries => {
 
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
+                entries.forEach(entry => {
 
-                }
+                    if (entry.isIntersecting) {
 
-            });
+                        entry.target.classList.add("visible");
 
-        },
-        {
-            threshold: 0.15
-        }
-    );
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
 
 
     elements.forEach(element => {
-
-        element.style.opacity = "0";
-
-        element.style.transform = "translateY(30px)";
-
-        element.style.transition =
-            "opacity .7s ease, transform .7s ease";
 
         observer.observe(element);
 
     });
 
 </script>
+
 
 </body>
 </html>
