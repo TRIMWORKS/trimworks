@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>TrimWorks | Work Smarter</title>
 
 <style>
-
-/* =========================
-   BASIC SETTINGS
-========================= */
+:root {
+    --green: #2E8B57;
+    --dark-gray: #333333;
+    --gray: #555555;
+    --light-gray: #707070;
+    --lighter-gray: #858585;
+    --white: #ffffff;
+}
 
 * {
     margin: 0;
@@ -24,194 +27,73 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-
-    /* REAL GRAY BACKGROUND */
-    background: #555555;
-
-    color: white;
-
-    overflow-x: hidden;
+    background: var(--gray);
+    color: var(--white);
 }
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-/* =========================
-   COLORS
-========================= */
-
-:root {
-    --green: #39ff14;
-    --dark-gray: #333333;
-    --gray: #555555;
-    --light-gray: #707070;
-    --lighter-gray: #858585;
-    --white: #ffffff;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
 
 nav {
-    position: fixed;
-
+    position: sticky;
     top: 0;
-    left: 0;
-
-    width: 100%;
-
-    padding: 14px 5%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    background: #3d3d3d;
-
-    border-bottom: 2px solid var(--green);
-
     z-index: 1000;
-}
-
-.nav-logo {
+    background: var(--dark-gray);
+    border-bottom: 3px solid var(--green);
     display: flex;
-
+    justify-content: space-between;
     align-items: center;
+    padding: 18px 7%;
+}
 
-    gap: 12px;
-
-    font-size: 22px;
-
+.logo {
+    font-size: 26px;
     font-weight: 900;
+    color: var(--white);
+    letter-spacing: 1px;
 }
 
-.nav-logo img {
-    width: 55px;
-    height: 55px;
-
-    object-fit: contain;
-}
-
-.nav-logo span {
+.logo span {
     color: var(--green);
 }
 
 nav ul {
-    display: flex;
-
-    gap: 28px;
-
     list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
-nav ul a {
-    color: white;
-
-    font-size: 14px;
-
+nav a {
+    color: var(--white);
+    text-decoration: none;
     font-weight: bold;
-
-    transition: .3s;
 }
 
-nav ul a:hover {
+nav a:hover {
     color: var(--green);
 }
 
 .nav-button {
-    border: 2px solid var(--green);
-
-    padding: 11px 18px;
-
-    border-radius: 7px;
-
-    color: var(--green);
-
-    font-weight: bold;
-}
-
-.nav-button:hover {
     background: var(--green);
-
-    color: #222;
+    color: var(--white);
+    padding: 10px 18px;
+    border-radius: 5px;
 }
 
-
-/* =========================
-   HERO
-========================= */
+section {
+    padding: 90px 7%;
+}
 
 .hero {
-    min-height: 100vh;
-
-    padding-top: 100px;
-
-    display: flex;
-
-    align-items: center;
-
+    min-height: 85vh;
     background: #666666;
-}
-
-.hero-content {
-    width: 90%;
-
-    max-width: 1400px;
-
-    margin: auto;
-
     display: grid;
-
-    grid-template-columns: 1fr 1.1fr;
-
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-
-    gap: 40px;
-}
-
-.hero-text {
-    padding: 50px 0;
-}
-
-.tag {
-    display: inline-block;
-
-    padding: 8px 15px;
-
-    border: 2px solid var(--green);
-
-    border-radius: 30px;
-
-    color: var(--green);
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 25px;
+    gap: 50px;
 }
 
 .hero h1 {
-    font-size: clamp(55px, 7vw, 100px);
-
+    font-size: clamp(50px, 7vw, 95px);
     line-height: .9;
-
-    letter-spacing: -4px;
-
-    margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 .hero h1 span {
@@ -219,645 +101,246 @@ nav ul a:hover {
 }
 
 .hero p {
-    max-width: 560px;
-
-    color: white;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-
-    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 30px 0;
+    max-width: 600px;
 }
 
-.buttons {
-    display: flex;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-.btn {
+.hero-button {
     display: inline-block;
-
-    padding: 15px 25px;
-
-    border-radius: 8px;
-
-    font-weight: bold;
-}
-
-.btn-green {
     background: var(--green);
-
-    color: #111;
-}
-
-.btn-green:hover {
-    transform: translateY(-2px);
-
-    box-shadow: 0 0 25px rgba(57,255,20,.5);
-}
-
-.btn-outline {
-    border: 2px solid white;
-
     color: white;
-}
-
-.btn-outline:hover {
-    border-color: var(--green);
-
-    color: var(--green);
-}
-
-
-/* =========================
-   HERO IMAGE
-========================= */
-
-.hero-image {
-    height: 600px;
-
-    border: 3px solid var(--green);
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    background: #333333;
+    padding: 16px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 .hero-image img {
     width: 100%;
-    height: 100%;
-
-    object-fit: cover;
+    border-radius: 10px;
+    display: block;
 }
 
-
-/* =========================
-   STATS
-========================= */
-
 .stats {
+    background: #777777;
     display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    background: #444444;
-
-    border-top: 2px solid #888;
-
-    border-bottom: 2px solid #888;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .stat {
-    padding: 30px;
-
-    text-align: center;
-
-    border-right: 1px solid #888;
-}
-
-.stat:last-child {
-    border-right: none;
+    background: #555555;
+    padding: 35px;
+    border-left: 5px solid var(--green);
 }
 
 .stat-number {
     color: var(--green);
-
-    font-size: 32px;
-
-    font-weight: 900;
-
-    margin-bottom: 8px;
-}
-
-.stat p {
-    color: white;
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    padding: 110px 6%;
-}
-
-.section-heading {
-    max-width: 850px;
-
-    margin: 0 auto 60px;
-
-    text-align: center;
-}
-
-.section-heading small {
-    color: var(--green);
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-}
-
-.section-heading h2 {
-    font-size: 60px;
-
-    margin: 15px 0 20px;
-}
-
-.section-heading h2 span {
-    color: var(--green);
-}
-
-.section-heading p {
-    color: white;
-
     font-size: 18px;
-
-    line-height: 1.7;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-
-/* =========================
-   PROBLEM
-========================= */
+.stat h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
 
 .problem {
-    background: #777777;
+    background: #606060;
 }
 
-.problem-layout {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: .8fr 1.2fr;
-
-    gap: 50px;
-
-    align-items: center;
+.section-title {
+    max-width: 700px;
+    margin-bottom: 50px;
 }
 
-.problem-intro h2 {
-    font-size: 55px;
-
-    line-height: 1;
-
-    margin-bottom: 20px;
+.section-title h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    text-transform: uppercase;
 }
 
-.problem-intro h2 span {
+.section-title span {
     color: var(--green);
 }
 
-.problem-intro p {
-    color: white;
-
-    line-height: 1.7;
+.section-title p {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 .problem-grid {
     display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .problem-card {
-    padding: 25px;
-
-    background: #454545;
-
-    border: 2px solid #888;
-
-    border-radius: 12px;
-}
-
-.problem-card:hover {
-    border-color: var(--green);
+    background: #444444;
+    padding: 40px;
+    border-top: 4px solid var(--green);
 }
 
 .problem-card h3 {
-    color: var(--green);
-
-    margin-bottom: 12px;
+    font-size: 26px;
+    margin-bottom: 15px;
 }
 
 .problem-card p {
-    color: white;
-
     line-height: 1.6;
-
-    font-size: 14px;
+    color: #eeeeee;
 }
-
-
-/* =========================
-   TRIMMER
-========================= */
-
-.trimmer-section {
-    background: #606060;
-}
-
-.trimmer-layout {
-    max-width: 1250px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: 1.15fr .85fr;
-
-    align-items: center;
-
-    gap: 60px;
-}
-
-.trimmer-photo {
-    height: 600px;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    border: 3px solid var(--green);
-
-    background: #333;
-}
-
-.trimmer-photo img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.trimmer-copy h2 {
-    font-size: 65px;
-
-    line-height: .95;
-
-    margin-bottom: 25px;
-}
-
-.trimmer-copy h2 span {
-    color: var(--green);
-}
-
-.trimmer-copy > p {
-    color: white;
-
-    line-height: 1.8;
-
-    font-size: 17px;
-
-    margin-bottom: 35px;
-}
-
-.feature-row {
-    display: flex;
-
-    gap: 15px;
-
-    margin-bottom: 25px;
-}
-
-.feature-number {
-    min-width: 42px;
-
-    height: 42px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: var(--green);
-
-    color: #111;
-
-    font-weight: 900;
-}
-
-.feature-row h3 {
-    margin-bottom: 5px;
-}
-
-.feature-row p {
-    color: white;
-
-    line-height: 1.5;
-}
-
-
-/* =========================
-   PRODUCT
-========================= */
 
 .product {
-    background: #777777;
-}
-
-.product-layout {
-    max-width: 1200px;
-
-    margin: auto;
-
+    background: #555555;
     display: grid;
-
-    grid-template-columns: .9fr 1.1fr;
-
-    gap: 70px;
-
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
 }
 
-.product-photo {
-    min-height: 500px;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    border: 3px solid var(--green);
-
-    background: #333;
-}
-
-.product-photo img {
+.product-image img {
     width: 100%;
-
-    min-height: 500px;
-
-    object-fit: cover;
+    border-radius: 10px;
 }
 
-.product-copy h2 {
-    font-size: 55px;
-
-    line-height: 1;
-
-    margin-bottom: 20px;
+.product h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    text-transform: uppercase;
 }
 
-.product-copy h2 span {
+.product h2 span {
     color: var(--green);
 }
 
-.product-copy > p {
-    color: white;
+.product p {
+    margin: 25px 0;
+    line-height: 1.7;
+    font-size: 18px;
+}
 
-    line-height: 1.8;
-
-    font-size: 17px;
-
-    margin-bottom: 30px;
+.check-list {
+    display: grid;
+    gap: 15px;
 }
 
 .check {
     display: flex;
-
+    align-items: center;
     gap: 15px;
-
-    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .check-icon {
-    min-width: 30px;
-
-    height: 30px;
-
-    border-radius: 50%;
-
+    width: 25px;
+    height: 25px;
     background: var(--green);
-
+    border-radius: 50%;
     position: relative;
 }
 
 .check-icon::after {
     content: "";
-
     position: absolute;
-
     width: 8px;
-    height: 14px;
-
-    border-right: 3px solid #111;
-    border-bottom: 3px solid #111;
-
-    transform: rotate(45deg);
-
-    left: 9px;
-    top: 5px;
+    height: 4px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    left: 7px;
+    top: 7px;
 }
-
-.check h4 {
-    margin-bottom: 4px;
-}
-
-.check p {
-    color: white;
-
-    line-height: 1.5;
-}
-
-
-/* =========================
-   ADJUSTMENT
-========================= */
 
 .adjustment {
-    background: #606060;
-}
-
-.adjustment-layout {
-    max-width: 1200px;
-
-    margin: auto;
-
+    background: #707070;
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
-    gap: 70px;
-
+    gap: 60px;
     align-items: center;
 }
 
-.adjustment-photo {
-    height: 500px;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    border: 3px solid var(--green);
-
-    background: #333;
-}
-
-.adjustment-photo img {
+.adjustment-image img {
     width: 100%;
-    height: 100%;
-
-    object-fit: cover;
+    border-radius: 10px;
 }
 
-.adjustment-copy h2 {
-    font-size: 55px;
-
-    line-height: 1;
-
-    margin-bottom: 20px;
+.adjustment h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    text-transform: uppercase;
 }
 
-.adjustment-copy h2 span {
+.adjustment h2 span {
     color: var(--green);
 }
 
-.adjustment-copy > p {
-    color: white;
-
-    line-height: 1.8;
-
-    margin-bottom: 30px;
+.adjustment p {
+    margin: 25px 0;
+    line-height: 1.7;
+    font-size: 18px;
 }
 
-.adjustment-point {
-    background: #474747;
+.adjustment-list {
+    display: grid;
+    gap: 18px;
+}
 
+.adjustment-item {
+    padding: 20px;
+    background: #555555;
     border-left: 4px solid var(--green);
-
-    padding: 17px 20px;
-
-    margin-bottom: 12px;
 }
 
-.adjustment-point strong {
-    display: block;
-
-    margin-bottom: 5px;
-
-    color: white;
+.adjustment-item h3 {
+    margin-bottom: 8px;
 }
-
-.adjustment-point span {
-    color: white;
-
-    line-height: 1.5;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   HOW IT WORKS
-========================= */
 
 .how {
-    background: #777777;
+    background: #444444;
 }
 
 .how-grid {
-    max-width: 1200px;
-
-    margin: auto;
-
     display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .how-card {
-    background: #444444;
-
-    border: 2px solid #888;
-
-    border-radius: 15px;
-
+    background: #555555;
     overflow: hidden;
+    border-radius: 8px;
 }
 
-.how-card:hover {
-    border-color: var(--green);
-}
-
-.how-photo {
-    height: 230px;
-
-    overflow: hidden;
-}
-
-.how-photo img {
+.how-card img {
     width: 100%;
-    height: 100%;
-
+    height: 220px;
     object-fit: cover;
 }
 
-.how-text {
+.how-content {
     padding: 25px;
 }
 
-.step {
+.how-content h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
     color: var(--green);
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 10px;
 }
 
-.how-text h3 {
-    font-size: 23px;
-
-    margin-bottom: 10px;
-}
-
-.how-text p {
-    color: white;
-
+.how-content p {
     line-height: 1.6;
 }
 
-
-/* =========================
-   CALL TO ACTION
-========================= */
-
 .cta {
+    background: var(--dark-gray);
     text-align: center;
-
-    padding: 120px 20px;
-
-    background: #4a4a4a;
-
-    border-top: 3px solid var(--green);
 }
 
 .cta h2 {
-    font-size: 80px;
-
-    line-height: .95;
-
-    margin-bottom: 25px;
+    font-size: clamp(50px, 8vw, 100px);
+    text-transform: uppercase;
 }
 
 .cta h2 span {
@@ -865,842 +348,347 @@ section {
 }
 
 .cta p {
-    color: white;
-
+    margin: 20px auto 30px;
     max-width: 650px;
-
-    margin: auto auto 30px;
-
-    line-height: 1.7;
-
     font-size: 18px;
+    line-height: 1.6;
 }
-
-
-/* =========================
-   FOOTER
-========================= */
 
 footer {
-    background: #333333;
-
-    border-top: 2px solid #888;
-
-    padding: 45px 6% 25px;
-}
-
-.footer-top {
+    background: #222222;
+    padding: 40px 7%;
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
-    max-width: 1300px;
-
-    margin: auto;
-
-    padding-bottom: 30px;
-
-    border-bottom: 1px solid #777;
 }
 
-.footer-brand {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-.footer-brand img {
-    width: 60px;
-}
-
-.footer-brand h3 {
+footer .logo {
     font-size: 22px;
 }
 
-.footer-brand span {
-    color: var(--green);
+footer p {
+    color: #bbbbbb;
 }
 
-.footer-brand p,
-.footer-top > p {
-    color: white;
-
-    font-size: 13px;
-}
-
-.copyright {
-    text-align: center;
-
-    color: #ccc;
-
-    padding-top: 20px;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width: 950px) {
-
-    nav ul {
-        display: none;
-    }
-
-    .hero-content {
+@media (max-width: 900px) {
+    .hero,
+    .product,
+    .adjustment {
         grid-template-columns: 1fr;
     }
 
-    .hero-text {
-        text-align: center;
-    }
-
-    .hero p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .buttons {
-        justify-content: center;
-    }
-
-    .hero-image {
-        height: 450px;
-    }
-
-    .problem-layout,
-    .trimmer-layout,
-    .product-layout,
-    .adjustment-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .problem-intro {
-        text-align: center;
-    }
-
-    .problem-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .stats,
+    .problem-grid,
     .how-grid {
         grid-template-columns: 1fr;
     }
 
-    .footer-top {
-        flex-direction: column;
-
-        gap: 20px;
-
-        text-align: center;
+    nav ul {
+        display: none;
     }
 }
 
-@media(max-width: 550px) {
-
+@media (max-width: 600px) {
     section {
-        padding: 75px 5%;
+        padding: 65px 6%;
+    }
+
+    nav {
+        padding: 15px 6%;
     }
 
     .hero h1 {
         font-size: 55px;
     }
 
-    .hero-image {
-        height: 350px;
-    }
-
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .stat {
-        border-right: none;
-
-        border-bottom: 1px solid #888;
-    }
-
-    .trimmer-photo,
-    .adjustment-photo {
-        height: 350px;
-    }
-
-    .product-photo {
-        min-height: 350px;
-    }
-
-    .product-photo img {
-        min-height: 350px;
-    }
-
-    .cta h2 {
-        font-size: 55px;
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
     }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- NAVIGATION -->
-
 <nav>
-
-    <div class="nav-logo">
-
-        <img src="logo.png" alt="TrimWorks Logo">
-
-        <div>
-            TRIM<span>WORKS</span>
-        </div>
-
-    </div>
-
+    <div class="logo">TRIM<span>WORKS</span></div>
 
     <ul>
-
-        <li>
-            <a href="#problem">The Problem</a>
-        </li>
-
-        <li>
-            <a href="#trimmer">The Trimmer</a>
-        </li>
-
-        <li>
-            <a href="#product">The Product</a>
-        </li>
-
-        <li>
-            <a href="#adjustment">Adjustment</a>
-        </li>
-
-        <li>
-            <a href="#how">How It Works</a>
-        </li>
-
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#product">Product</a></li>
+        <li><a href="#adjustment">Adjustment</a></li>
+        <li><a href="#how">How It Works</a></li>
     </ul>
 
-
-    <a href="#contact" class="nav-button">
-        Learn More
-    </a>
-
+    <a href="#product" class="nav-button">Learn More</a>
 </nav>
 
-
-<!-- HERO -->
-
-<header class="hero">
-
-    <div class="hero-content">
-
-        <div class="hero-text">
-
-            <div class="tag">
-                BUILT TO WORK SMARTER
-            </div>
-
-            <h1>
-                TAKE THE<br>
-                <span>WEIGHT</span><br>
-                OFF.
-            </h1>
-
-            <p>
-                The TrimWorks wheel is an innovative attachment
-                designed to support the weight of your string trimmer
-                and make trimming easier, more comfortable,
-                and less tiring.
-            </p>
-
-            <div class="buttons">
-
-                <a href="#product" class="btn btn-green">
-                    Explore the Product
-                </a>
-
-                <a href="#how" class="btn btn-outline">
-                    See How It Works
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-image">
-
-            <img
-                src="hero-trimmer.jpg"
-                alt="TrimWorks wheel attached to a string trimmer"
-            >
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- STATS -->
-
-<div class="stats">
-
-    <div class="stat">
-
-        <div class="stat-number">
-            01
-        </div>
+<section class="hero">
+    <div>
+        <h1>
+            TAKE THE
+            <span>WEIGHT</span>
+            OFF.
+        </h1>
 
         <p>
-            Simple Attachment
+            TrimWorks is a simple wheel attachment designed to support
+            the weight of a string trimmer, helping make long trimming
+            jobs more comfortable and controlled.
         </p>
 
+        <a href="#product" class="hero-button">SEE THE PRODUCT</a>
     </div>
 
+    <div class="hero-image">
+        <img src="hero-trimmer.jpg" alt="TrimWorks wheel attached to a string trimmer">
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stat">
+        <div class="stat-number">01</div>
+        <h3>Simple Attachment</h3>
+        <p>Designed to connect directly to your string trimmer.</p>
+    </div>
 
     <div class="stat">
-
-        <div class="stat-number">
-            02
-        </div>
-
-        <p>
-            Less Weight to Hold
-        </p>
-
+        <div class="stat-number">02</div>
+        <h3>Less Weight to Hold</h3>
+        <p>The wheel helps support the trimmer while you work.</p>
     </div>
-
 
     <div class="stat">
-
-        <div class="stat-number">
-            03
-        </div>
-
-        <p>
-            Smarter Trimming
-        </p>
-
+        <div class="stat-number">03</div>
+        <h3>Smarter Trimming</h3>
+        <p>Make long trimming jobs easier to control.</p>
     </div>
-
-</div>
-
-
-<!-- PROBLEM -->
+</section>
 
 <section class="problem" id="problem">
 
-    <div class="problem-layout">
-
-        <div class="problem-intro">
-
-            <div class="tag">
-                THE PROBLEM
-            </div>
-
-            <h2>
-                Trimming shouldn't
-                <span>wear you out.</span>
-            </h2>
-
-            <p>
-                String trimmers can become tiring to hold and control,
-                especially during longer jobs. TrimWorks is designed
-                around a simple idea: support the tool so the person
-                doesn't have to carry all of its weight.
-            </p>
-
-        </div>
-
-
-        <div class="problem-grid">
-
-            <div class="problem-card">
-
-                <h3>
-                    Arm Fatigue
-                </h3>
-
-                <p>
-                    Holding a trimmer for extended periods can leave
-                    your arms and shoulders tired.
-                </p>
-
-            </div>
-
-
-            <div class="problem-card">
-
-                <h3>
-                    Back Strain
-                </h3>
-
-                <p>
-                    Repeated trimming can be uncomfortable when you're
-                    constantly supporting and maneuvering the machine.
-                </p>
-
-            </div>
-
-
-            <div class="problem-card">
-
-                <h3>
-                    Long Jobs
-                </h3>
-
-                <p>
-                    The longer you work, the more noticeable the
-                    weight and fatigue can become.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- TRIMMER -->
-
-<section class="trimmer-section" id="trimmer">
-
-    <div class="trimmer-layout">
-
-        <div class="trimmer-photo">
-
-            <img
-                src="trimmer-action.jpg"
-                alt="String trimmer using TrimWorks"
-            >
-
-        </div>
-
-
-        <div class="trimmer-copy">
-
-            <div class="tag">
-                THE TRIMWORKS SYSTEM
-            </div>
-
-            <h2>
-                Your trimmer.
-                <span>Reinvented.</span>
-            </h2>
-
-            <p>
-                TrimWorks combines a support wheel with an adjustable
-                attachment system to create a more comfortable way
-                to control your string trimmer.
-            </p>
-
-
-            <div class="feature-row">
-
-                <div class="feature-number">
-                    01
-                </div>
-
-                <div>
-
-                    <h3>
-                        Support the Weight
-                    </h3>
-
-                    <p>
-                        The wheel helps support the trimmer while
-                        you guide it across the ground.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="feature-row">
-
-                <div class="feature-number">
-                    02
-                </div>
-
-                <div>
-
-                    <h3>
-                        Adjust the Angle
-                    </h3>
-
-                    <p>
-                        Set the attachment to the position that works
-                        best for trimming or edging.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="feature-row">
-
-                <div class="feature-number">
-                    03
-                </div>
-
-                <div>
-
-                    <h3>
-                        Control Your Cut
-                    </h3>
-
-                    <p>
-                        Keep the cutting head positioned where you
-                        need it while maintaining control.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PRODUCT -->
-
-<section class="product" id="product">
-
-    <div class="product-layout">
-
-        <div class="product-photo">
-
-            <img
-                src="wheel-closeup.jpg"
-                alt="TrimWorks support wheel"
-            >
-
-        </div>
-
-
-        <div class="product-copy">
-
-            <div class="tag">
-                THE PRODUCT
-            </div>
-
-            <h2>
-                A small wheel.
-                <span>A big difference.</span>
-            </h2>
-
-            <p>
-                TrimWorks attaches a support wheel to a string trimmer,
-                helping carry some of the tool's weight while you guide
-                the machine across the ground.
-            </p>
-
-
-            <div class="check">
-
-                <div class="check-icon"></div>
-
-                <div>
-
-                    <h4>
-                        Support the Trimmer
-                    </h4>
-
-                    <p>
-                        Let the wheel help carry the load while trimming.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="check">
-
-                <div class="check-icon"></div>
-
-                <div>
-
-                    <h4>
-                        Designed for Comfort
-                    </h4>
-
-                    <p>
-                        Reduce the amount of weight you need to hold
-                        throughout the job.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="check">
-
-                <div class="check-icon"></div>
-
-                <div>
-
-                    <h4>
-                        Simple Concept
-                    </h4>
-
-                    <p>
-                        A straightforward attachment designed to make
-                        an everyday tool easier to use.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ADJUSTMENT -->
-
-<section class="adjustment" id="adjustment">
-
-    <div class="adjustment-layout">
-
-        <div class="adjustment-photo">
-
-            <img
-                src="adjustment.jpg"
-                alt="TrimWorks adjustable attachment"
-            >
-
-        </div>
-
-
-        <div class="adjustment-copy">
-
-            <div class="tag">
-                SMART ADJUSTMENT
-            </div>
-
-            <h2>
-                Find your
-                <span>perfect angle.</span>
-            </h2>
-
-            <p>
-                Not every trimming job is the same. The TrimWorks
-                attachment is designed so you can adjust the position
-                of the trimmer relative to the support wheel.
-            </p>
-
-
-            <div class="adjustment-point">
-
-                <strong>
-                    Set the Position
-                </strong>
-
-                <span>
-                    Adjust the attachment to change the working angle
-                    of the trimmer.
-                </span>
-
-            </div>
-
-
-            <div class="adjustment-point">
-
-                <strong>
-                    Create a Cleaner Edge
-                </strong>
-
-                <span>
-                    Position the trimmer so the cutting head can follow
-                    the edge of sidewalks, driveways, flower beds,
-                    and other boundaries.
-                </span>
-
-            </div>
-
-
-            <div class="adjustment-point">
-
-                <strong>
-                    Lock It In
-                </strong>
-
-                <span>
-                    Once you find the desired position, secure the
-                    adjustment so the setup stays consistent.
-                </span>
-
-            </div>
-
-
-            <div class="adjustment-point">
-
-                <strong>
-                    Adapt to the Job
-                </strong>
-
-                <span>
-                    Change the position when moving between normal
-                    trimming and edging work.
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- HOW IT WORKS -->
-
-<section class="how" id="how">
-
-    <div class="section-heading">
-
-        <small>
-            HOW IT WORKS
-        </small>
-
+    <div class="section-title">
         <h2>
-            Simple. Smart.
-            <span>Trim.</span>
+            Trimming shouldn't
+            <span>wear you out.</span>
         </h2>
 
         <p>
-            Get the TrimWorks system set up and get to work.
+            Holding a string trimmer for a long time can become tiring.
+            TrimWorks focuses on supporting the tool so you can focus
+            on getting the job done.
         </p>
-
     </div>
 
+    <div class="problem-grid">
+
+        <div class="problem-card">
+            <h3>Arm Fatigue</h3>
+            <p>
+                Holding the weight of a trimmer for long periods can
+                make your arms tired.
+            </p>
+        </div>
+
+        <div class="problem-card">
+            <h3>Back Strain</h3>
+            <p>
+                Constantly supporting and controlling the trimmer can
+                make larger jobs uncomfortable.
+            </p>
+        </div>
+
+        <div class="problem-card">
+            <h3>Long Jobs</h3>
+            <p>
+                Large yards require more time and more effort.
+                TrimWorks is designed with longer jobs in mind.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="product" id="product">
+
+    <div class="product-image">
+        <img src="trimmer-action.jpg" alt="TrimWorks string trimmer">
+    </div>
+
+    <div>
+        <h2>
+            BUILT TO
+            <span>SUPPORT.</span>
+        </h2>
+
+        <p>
+            TrimWorks adds a support wheel to the trimmer so part of
+            the tool's weight can rest on the ground instead of being
+            held entirely by the user.
+        </p>
+
+        <div class="check-list">
+
+            <div class="check">
+                <div class="check-icon"></div>
+                <span>Support the Weight</span>
+            </div>
+
+            <div class="check">
+                <div class="check-icon"></div>
+                <span>Adjust the Angle</span>
+            </div>
+
+            <div class="check">
+                <div class="check-icon"></div>
+                <span>Control Your Cut</span>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="product">
+
+    <div>
+        <h2>
+            THE
+            <span>WHEEL.</span>
+        </h2>
+
+        <p>
+            The support wheel is the heart of TrimWorks. It is designed
+            to roll along the ground while helping support the trimmer.
+        </p>
+
+        <div class="check-list">
+
+            <div class="check">
+                <div class="check-icon"></div>
+                <span>Support the Trimmer</span>
+            </div>
+
+            <div class="check">
+                <div class="check-icon"></div>
+                <span>Designed for Comfort</span>
+            </div>
+
+            <div class="check">
+                <div class="check-icon"></div>
+                <span>Simple Concept</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="product-image">
+        <img src="wheel-closeup.jpg" alt="TrimWorks support wheel">
+    </div>
+
+</section>
+
+<section class="adjustment" id="adjustment">
+
+    <div class="adjustment-image">
+        <img src="adjustment.jpg" alt="TrimWorks adjustable attachment">
+    </div>
+
+    <div>
+        <h2>
+            FIND YOUR
+            <span>ANGLE.</span>
+        </h2>
+
+        <p>
+            The adjustable attachment allows the wheel position to be
+            changed so the trimmer can be positioned for different
+            cutting situations.
+        </p>
+
+        <div class="adjustment-list">
+
+            <div class="adjustment-item">
+                <h3>Set the Position</h3>
+                <p>Move the wheel to the position that works for you.</p>
+            </div>
+
+            <div class="adjustment-item">
+                <h3>Create a Cleaner Edge</h3>
+                <p>Adjust the setup to help control your cutting angle.</p>
+            </div>
+
+            <div class="adjustment-item">
+                <h3>Lock It In</h3>
+                <p>Secure the attachment before starting your trimming job.</p>
+            </div>
+
+            <div class="adjustment-item">
+                <h3>Adapt to the Job</h3>
+                <p>Change the position depending on the terrain and task.</p>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="how" id="how">
+
+    <div class="section-title">
+        <h2>
+            HOW IT
+            <span>WORKS.</span>
+        </h2>
+
+        <p>
+            Three simple steps to get your TrimWorks attachment ready.
+        </p>
+    </div>
 
     <div class="how-grid">
 
-
         <div class="how-card">
+            <img src="how-attach.jpg" alt="Attaching the TrimWorks wheel">
 
-            <div class="how-photo">
-
-                <img
-                    src="how-attach.jpg"
-                    alt="Attaching TrimWorks"
-                >
-
-            </div>
-
-            <div class="how-text">
-
-                <div class="step">
-                    STEP 01
-                </div>
-
-                <h3>
-                    Attach
-                </h3>
-
+            <div class="how-content">
+                <h3>01 — ATTACH</h3>
                 <p>
-                    Secure the TrimWorks wheel and attachment mechanism
-                    to your string trimmer.
+                    Secure the TrimWorks attachment onto your string trimmer.
                 </p>
-
             </div>
-
         </div>
 
-
         <div class="how-card">
+            <img src="how-adjust.jpg" alt="Adjusting the TrimWorks wheel">
 
-            <div class="how-photo">
-
-                <img
-                    src="how-adjust.jpg"
-                    alt="Adjusting TrimWorks"
-                >
-
-            </div>
-
-            <div class="how-text">
-
-                <div class="step">
-                    STEP 02
-                </div>
-
-                <h3>
-                    Adjust
-                </h3>
-
+            <div class="how-content">
+                <h3>02 — ADJUST</h3>
                 <p>
-                    Position the wheel for the right working angle
-                    and secure the adjustment.
+                    Position the wheel to find the angle that works best
+                    for the job.
                 </p>
-
             </div>
-
         </div>
 
-
         <div class="how-card">
+            <img src="how-trim.jpg" alt="Using the TrimWorks wheel while trimming">
 
-            <div class="how-photo">
-
-                <img
-                    src="how-trim.jpg"
-                    alt="Using TrimWorks"
-                >
-
-            </div>
-
-            <div class="how-text">
-
-                <div class="step">
-                    STEP 03
-                </div>
-
-                <h3>
-                    Trim
-                </h3>
-
+            <div class="how-content">
+                <h3>03 — TRIM</h3>
                 <p>
-                    Roll the wheel along the ground while guiding
-                    the trimmer for a controlled cut.
+                    Let the wheel roll along the ground while you trim.
                 </p>
-
             </div>
-
         </div>
 
     </div>
 
 </section>
 
-
-<!-- CTA -->
-
-<section class="cta" id="contact">
+<section class="cta">
 
     <h2>
         WORK
@@ -1708,63 +696,23 @@ footer {
     </h2>
 
     <p>
-        TrimWorks is creating a smarter way to use a string trimmer.
-        Less weight to carry. More comfort. More control.
+        TrimWorks is built around one simple idea:
+        make trimming easier by supporting the tool.
     </p>
 
-    <a
-        href="mailto:trimworks@example.com"
-        class="btn btn-green"
-    >
-        Contact TrimWorks
-    </a>
+    <a href="#product" class="hero-button">EXPLORE TRIMWORKS</a>
 
 </section>
 
-
-<!-- FOOTER -->
-
 <footer>
 
-    <div class="footer-top">
-
-        <div class="footer-brand">
-
-            <img
-                src="logo.png"
-                alt="TrimWorks Logo"
-            >
-
-            <div>
-
-                <h3>
-                    TRIM<span>WORKS</span>
-                </h3>
-
-                <p>
-                    BUILT TO WORK SMARTER.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <p>
-            Innovative tools for everyday work.
-        </p>
-
+    <div class="logo">
+        TRIM<span>WORKS</span>
     </div>
 
-
-    <div class="copyright">
-
-        © 2026 TrimWorks. All rights reserved.
-
-    </div>
+    <p>BUILT TO WORK SMARTER.</p>
 
 </footer>
-
 
 </body>
 </html>
