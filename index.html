@@ -27,18 +27,25 @@
 
 :root {
     --green: #39ff14;
-    --green-dark: #1fc707;
-    --black: #050505;
-    --black-2: #090909;
-    --black-3: #101010;
-    --gray: #888;
+    --green-dark: #22c900;
+
+    /* NEW GRAY THEME */
+    --black: #151515;
+    --black-2: #1b1b1b;
+    --black-3: #222222;
+    --gray-dark: #292929;
+    --gray: #777;
+    --gray-light: #aaa;
+
     --white: #ffffff;
 }
 
 body {
     background: var(--black);
     color: white;
+
     font-family: Arial, Helvetica, sans-serif;
+
     overflow-x: hidden;
 }
 
@@ -70,11 +77,11 @@ nav {
 
     padding: 14px 5%;
 
-    background: rgba(3, 3, 3, 0.88);
+    background: rgba(25, 25, 25, 0.94);
 
     backdrop-filter: blur(15px);
 
-    border-bottom: 1px solid rgba(57,255,20,.15);
+    border-bottom: 1px solid rgba(57,255,20,.2);
 }
 
 .nav-logo {
@@ -160,7 +167,12 @@ nav ul li a:hover {
 
     padding-top: 90px;
 
-    background: #050505;
+    background:
+        linear-gradient(
+            135deg,
+            #1a1a1a,
+            #242424
+        );
 
     position: relative;
 
@@ -180,10 +192,10 @@ nav ul li a:hover {
 
     border-radius: 50%;
 
-    border: 1px solid rgba(57,255,20,.08);
+    border: 1px solid rgba(57,255,20,.12);
 
     box-shadow:
-        0 0 150px rgba(57,255,20,.05);
+        0 0 150px rgba(57,255,20,.08);
 }
 
 .hero-content {
@@ -211,7 +223,7 @@ nav ul li a:hover {
 .tag {
     display: inline-block;
 
-    border: 1px solid rgba(57,255,20,.5);
+    border: 1px solid rgba(57,255,20,.7);
 
     color: var(--green);
 
@@ -227,7 +239,7 @@ nav ul li a:hover {
 
     margin-bottom: 25px;
 
-    background: rgba(57,255,20,.04);
+    background: rgba(57,255,20,.05);
 }
 
 .hero h1 {
@@ -250,7 +262,7 @@ nav ul li a:hover {
 }
 
 .hero p {
-    color: #aaa;
+    color: #ddd;
 
     font-size: 18px;
 
@@ -298,7 +310,7 @@ nav ul li a:hover {
 }
 
 .btn-outline {
-    border: 1px solid #555;
+    border: 1px solid #777;
 
     color: white;
 }
@@ -309,7 +321,9 @@ nav ul li a:hover {
     color: var(--green);
 }
 
-/* HERO IMAGE */
+/* =====================================================
+   HERO IMAGE
+===================================================== */
 
 .hero-image {
     height: 650px;
@@ -344,8 +358,8 @@ nav ul li a:hover {
     background:
         linear-gradient(
             90deg,
-            #050505 0%,
-            rgba(5,5,5,.25) 35%,
+            #1a1a1a 0%,
+            rgba(26,26,26,.25) 35%,
             transparent 65%
         );
 }
@@ -359,11 +373,11 @@ nav ul li a:hover {
 
     grid-template-columns: repeat(3,1fr);
 
-    background: #080808;
+    background: #202020;
 
-    border-top: 1px solid #222;
+    border-top: 1px solid #444;
 
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #444;
 }
 
 .stat {
@@ -371,7 +385,7 @@ nav ul li a:hover {
 
     text-align: center;
 
-    border-right: 1px solid #252525;
+    border-right: 1px solid #444;
 }
 
 .stat:last-child {
@@ -389,7 +403,7 @@ nav ul li a:hover {
 }
 
 .stat p {
-    color: #aaa;
+    color: #ddd;
 }
 
 /* =====================================================
@@ -429,7 +443,7 @@ section {
 }
 
 .section-heading p {
-    color: #888;
+    color: #bbb;
 
     line-height: 1.7;
 
@@ -441,7 +455,7 @@ section {
 ===================================================== */
 
 .problem {
-    background: #050505;
+    background: #292929;
 }
 
 .problem-layout {
@@ -471,7 +485,7 @@ section {
 }
 
 .problem-intro p {
-    color: #888;
+    color: #ccc;
 
     line-height: 1.7;
 }
@@ -487,9 +501,9 @@ section {
 .problem-card {
     padding: 25px;
 
-    background: #0b0b0b;
+    background: #1d1d1d;
 
-    border: 1px solid #252525;
+    border: 1px solid #555;
 
     border-radius: 12px;
 
@@ -499,15 +513,46 @@ section {
 .problem-card:hover {
     transform: translateY(-7px);
 
-    border-color: rgba(57,255,20,.5);
+    border-color: rgba(57,255,20,.6);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
 }
 
+/* REPLACED EMOJIS WITH CLEAN CSS SYMBOL */
+
 .problem-icon {
-    font-size: 32px;
+    width: 48px;
+    height: 48px;
+
+    border: 2px solid var(--green);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     color: var(--green);
 
+    font-size: 22px;
+
+    font-weight: bold;
+
     margin-bottom: 20px;
+}
+
+.problem-icon::before {
+    content: "+";
+}
+
+.problem-card:nth-child(2) .problem-icon::before {
+    content: "↕";
+}
+
+.problem-card:nth-child(3) .problem-icon::before {
+    content: "⌁";
 }
 
 .problem-card h3 {
@@ -515,7 +560,7 @@ section {
 }
 
 .problem-card p {
-    color: #777;
+    color: #aaa;
 
     line-height: 1.6;
 
@@ -527,7 +572,7 @@ section {
 ===================================================== */
 
 .trimmer-section {
-    background: #080808;
+    background: #202020;
 
     padding-top: 80px;
 }
@@ -553,7 +598,7 @@ section {
 
     overflow: hidden;
 
-    border: 1px solid #222;
+    border: 1px solid #555;
 
     position: relative;
 }
@@ -599,7 +644,7 @@ section {
 }
 
 .trimmer-copy > p {
-    color: #999;
+    color: #ccc;
 
     line-height: 1.8;
 
@@ -638,7 +683,7 @@ section {
 }
 
 .feature-row p {
-    color: #777;
+    color: #aaa;
 
     line-height: 1.5;
 }
@@ -648,7 +693,7 @@ section {
 ===================================================== */
 
 .product {
-    background: #050505;
+    background: #292929;
 }
 
 .product-layout {
@@ -672,9 +717,9 @@ section {
 
     overflow: hidden;
 
-    border: 1px solid #252525;
+    border: 1px solid #555;
 
-    background: #090909;
+    background: #1b1b1b;
 }
 
 .product-photo img {
@@ -699,7 +744,7 @@ section {
 }
 
 .product-copy > p {
-    color: #888;
+    color: #ccc;
 
     line-height: 1.8;
 
@@ -727,11 +772,15 @@ section {
     align-items: center;
     justify-content: center;
 
-    background: rgba(57,255,20,.12);
+    border: 2px solid var(--green);
 
     color: var(--green);
 
     font-weight: bold;
+}
+
+.check-icon::before {
+    content: "✓";
 }
 
 .check h4 {
@@ -739,7 +788,7 @@ section {
 }
 
 .check p {
-    color: #777;
+    color: #aaa;
 
     line-height: 1.5;
 }
@@ -749,7 +798,7 @@ section {
 ===================================================== */
 
 .adjustment {
-    background: #090909;
+    background: #202020;
 }
 
 .adjustment-layout {
@@ -773,7 +822,7 @@ section {
 
     overflow: hidden;
 
-    border: 1px solid #222;
+    border: 1px solid #555;
 
     position: relative;
 }
@@ -813,7 +862,7 @@ section {
 }
 
 .adjustment-copy > p {
-    color: #999;
+    color: #ccc;
 
     line-height: 1.8;
 
@@ -821,7 +870,7 @@ section {
 }
 
 .adjustment-point {
-    background: #0d0d0d;
+    background: #292929;
 
     border-left: 3px solid var(--green);
 
@@ -839,7 +888,7 @@ section {
 }
 
 .adjustment-point span {
-    color: #777;
+    color: #aaa;
 
     line-height: 1.5;
 
@@ -851,7 +900,7 @@ section {
 ===================================================== */
 
 .how {
-    background: #050505;
+    background: #292929;
 }
 
 .how-grid {
@@ -867,9 +916,9 @@ section {
 }
 
 .how-card {
-    background: #0b0b0b;
+    background: #1d1d1d;
 
-    border: 1px solid #222;
+    border: 1px solid #555;
 
     border-radius: 15px;
 
@@ -912,7 +961,7 @@ section {
 }
 
 .how-text p {
-    color: #777;
+    color: #aaa;
 
     line-height: 1.6;
 }
@@ -928,12 +977,12 @@ section {
 
     background:
         linear-gradient(
-            rgba(5,5,5,.85),
-            rgba(5,5,5,.95)
+            rgba(30,30,30,.90),
+            rgba(20,20,20,.95)
         ),
         url("hero-trimmer.jpg") center/cover;
 
-    border-top: 1px solid rgba(57,255,20,.2);
+    border-top: 1px solid rgba(57,255,20,.3);
 }
 
 .cta h2 {
@@ -949,7 +998,7 @@ section {
 }
 
 .cta p {
-    color: #aaa;
+    color: #ccc;
 
     max-width: 650px;
 
@@ -965,9 +1014,9 @@ section {
 ===================================================== */
 
 footer {
-    background: #030303;
+    background: #181818;
 
-    border-top: 1px solid #222;
+    border-top: 1px solid #444;
 
     padding: 45px 6% 25px;
 }
@@ -985,7 +1034,7 @@ footer {
 
     padding-bottom: 30px;
 
-    border-bottom: 1px solid #181818;
+    border-bottom: 1px solid #333;
 }
 
 .footer-brand {
@@ -1010,7 +1059,7 @@ footer {
 
 .footer-brand p,
 .footer-top > p {
-    color: #666;
+    color: #999;
 
     font-size: 13px;
 }
@@ -1018,7 +1067,7 @@ footer {
 .copyright {
     text-align: center;
 
-    color: #444;
+    color: #777;
 
     padding-top: 20px;
 
@@ -1139,7 +1188,7 @@ footer {
     .stat {
         border-right: none;
 
-        border-bottom: 1px solid #222;
+        border-bottom: 1px solid #444;
     }
 
     .stat:last-child {
@@ -1253,8 +1302,9 @@ footer {
 
             <p>
                 The TrimWorks wheel is an innovative attachment
-                designed to help support the weight of your string
-                trimmer and make trimming more comfortable and less tiring.
+                designed to support the weight of your string trimmer
+                and make trimming easier, more comfortable,
+                and less tiring.
             </p>
 
 
@@ -1279,8 +1329,6 @@ footer {
 
         </div>
 
-
-        <!-- REAL PRODUCT IMAGE -->
 
         <div class="hero-image">
 
@@ -1335,7 +1383,7 @@ footer {
         </div>
 
         <p>
-            Smarter Trimming
+            Built for Smarter Trimming
         </p>
 
     </div>
@@ -1383,9 +1431,7 @@ footer {
 
             <div class="problem-card reveal">
 
-                <div class="problem-icon">
-                    💪
-                </div>
+                <div class="problem-icon"></div>
 
                 <h3>
                     Arm Fatigue
@@ -1401,9 +1447,7 @@ footer {
 
             <div class="problem-card reveal">
 
-                <div class="problem-icon">
-                    🧍
-                </div>
+                <div class="problem-icon"></div>
 
                 <h3>
                     Back Strain
@@ -1419,9 +1463,7 @@ footer {
 
             <div class="problem-card reveal">
 
-                <div class="problem-icon">
-                    ⏱
-                </div>
+                <div class="problem-icon"></div>
 
                 <h3>
                     Long Jobs
@@ -1599,9 +1641,7 @@ footer {
 
             <div class="check">
 
-                <div class="check-icon">
-                    ✓
-                </div>
+                <div class="check-icon"></div>
 
                 <div>
 
@@ -1620,9 +1660,7 @@ footer {
 
             <div class="check">
 
-                <div class="check-icon">
-                    ✓
-                </div>
+                <div class="check-icon"></div>
 
                 <div>
 
@@ -1642,9 +1680,7 @@ footer {
 
             <div class="check">
 
-                <div class="check-icon">
-                    ✓
-                </div>
+                <div class="check-icon"></div>
 
                 <div>
 
@@ -1713,7 +1749,7 @@ footer {
             <div class="adjustment-point">
 
                 <strong>
-                    🔧 Set the Position
+                    Set the Position
                 </strong>
 
                 <span>
@@ -1727,7 +1763,7 @@ footer {
             <div class="adjustment-point">
 
                 <strong>
-                    📐 Create a Cleaner Edge
+                    Create a Cleaner Edge
                 </strong>
 
                 <span>
@@ -1742,7 +1778,7 @@ footer {
             <div class="adjustment-point">
 
                 <strong>
-                    🔒 Lock It In
+                    Lock It In
                 </strong>
 
                 <span>
@@ -1756,7 +1792,7 @@ footer {
             <div class="adjustment-point">
 
                 <strong>
-                    ⚡ Adapt to the Job
+                    Adapt to the Job
                 </strong>
 
                 <span>
@@ -1804,8 +1840,6 @@ footer {
     <div class="how-grid">
 
 
-        <!-- STEP 1 -->
-
         <div class="how-card reveal">
 
             <div class="how-photo">
@@ -1838,8 +1872,6 @@ footer {
         </div>
 
 
-        <!-- STEP 2 -->
-
         <div class="how-card reveal">
 
             <div class="how-photo">
@@ -1871,8 +1903,6 @@ footer {
 
         </div>
 
-
-        <!-- STEP 3 -->
 
         <div class="how-card reveal">
 
