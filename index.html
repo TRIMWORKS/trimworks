@@ -1,56 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TrimWorks | Built to Work Smarter</title>
-
-<meta
-    name="description"
-    content="TrimWorks creates innovative string trimmer attachments designed to help support the weight of your trimmer and make trimming more comfortable."
->
+<title>TrimWorks | Work Smarter</title>
 
 <style>
 
-/* =====================================================
-   RESET
-===================================================== */
+/* =========================
+   BASIC SETTINGS
+========================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --green: #39ff14;
-    --green-dark: #22c900;
-
-    /* NEW GRAY THEME */
-    --black: #151515;
-    --black-2: #1b1b1b;
-    --black-3: #222222;
-    --gray-dark: #292929;
-    --gray: #777;
-    --gray-light: #aaa;
-
-    --white: #ffffff;
-}
-
 body {
-    background: var(--black);
-    color: white;
-
     font-family: Arial, Helvetica, sans-serif;
+
+    /* REAL GRAY BACKGROUND */
+    background: #555555;
+
+    color: white;
 
     overflow-x: hidden;
 }
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 a {
@@ -58,43 +43,57 @@ a {
     color: inherit;
 }
 
-/* =====================================================
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --green: #39ff14;
+    --dark-gray: #333333;
+    --gray: #555555;
+    --light-gray: #707070;
+    --lighter-gray: #858585;
+    --white: #ffffff;
+}
+
+
+/* =========================
    NAVIGATION
-===================================================== */
+========================= */
 
 nav {
     position: fixed;
+
     top: 0;
     left: 0;
 
     width: 100%;
 
-    z-index: 999;
+    padding: 14px 5%;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
-    padding: 14px 5%;
+    background: #3d3d3d;
 
-    background: rgba(25, 25, 25, 0.94);
+    border-bottom: 2px solid var(--green);
 
-    backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid rgba(57,255,20,.2);
+    z-index: 1000;
 }
 
 .nav-logo {
     display: flex;
+
     align-items: center;
 
     gap: 12px;
 
-    font-size: 21px;
+    font-size: 22px;
 
     font-weight: 900;
-
-    letter-spacing: 1px;
 }
 
 .nav-logo img {
@@ -116,86 +115,53 @@ nav ul {
     list-style: none;
 }
 
-nav ul li a {
+nav ul a {
+    color: white;
+
     font-size: 14px;
 
     font-weight: bold;
 
-    color: #ddd;
-
     transition: .3s;
 }
 
-nav ul li a:hover {
+nav ul a:hover {
     color: var(--green);
 }
 
 .nav-button {
-    border: 1px solid var(--green);
+    border: 2px solid var(--green);
 
-    color: var(--green);
-
-    padding: 11px 19px;
+    padding: 11px 18px;
 
     border-radius: 7px;
 
-    font-size: 13px;
+    color: var(--green);
 
     font-weight: bold;
-
-    transition: .3s;
 }
 
 .nav-button:hover {
     background: var(--green);
 
-    color: black;
-
-    box-shadow:
-        0 0 25px rgba(57,255,20,.4);
+    color: #222;
 }
 
-/* =====================================================
+
+/* =========================
    HERO
-===================================================== */
+========================= */
 
 .hero {
     min-height: 100vh;
 
+    padding-top: 100px;
+
     display: flex;
+
     align-items: center;
 
-    padding-top: 90px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1a1a1a,
-            #242424
-        );
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 650px;
-    height: 650px;
-
-    right: -250px;
-    top: 80px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(57,255,20,.12);
-
-    box-shadow:
-        0 0 150px rgba(57,255,20,.08);
+    background: #666666;
 }
 
 .hero-content {
@@ -207,13 +173,11 @@ nav ul li a:hover {
 
     display: grid;
 
-    grid-template-columns: .85fr 1.15fr;
+    grid-template-columns: 1fr 1.1fr;
 
     align-items: center;
 
-    position: relative;
-
-    z-index: 2;
+    gap: 40px;
 }
 
 .hero-text {
@@ -223,23 +187,21 @@ nav ul li a:hover {
 .tag {
     display: inline-block;
 
-    border: 1px solid rgba(57,255,20,.7);
-
-    color: var(--green);
-
     padding: 8px 15px;
+
+    border: 2px solid var(--green);
 
     border-radius: 30px;
 
+    color: var(--green);
+
     font-size: 11px;
 
-    font-weight: 900;
+    font-weight: bold;
 
     letter-spacing: 2px;
 
     margin-bottom: 25px;
-
-    background: rgba(57,255,20,.05);
 }
 
 .hero h1 {
@@ -247,28 +209,23 @@ nav ul li a:hover {
 
     line-height: .9;
 
-    letter-spacing: -5px;
-
-    font-weight: 1000;
+    letter-spacing: -4px;
 
     margin-bottom: 30px;
 }
 
 .hero h1 span {
     color: var(--green);
-
-    text-shadow:
-        0 0 30px rgba(57,255,20,.25);
 }
 
 .hero p {
-    color: #ddd;
+    max-width: 560px;
+
+    color: white;
 
     font-size: 18px;
 
     line-height: 1.7;
-
-    max-width: 560px;
 
     margin-bottom: 30px;
 }
@@ -276,7 +233,7 @@ nav ul li a:hover {
 .buttons {
     display: flex;
 
-    gap: 14px;
+    gap: 15px;
 
     flex-wrap: wrap;
 }
@@ -289,28 +246,22 @@ nav ul li a:hover {
     border-radius: 8px;
 
     font-weight: bold;
-
-    transition: .3s;
 }
 
 .btn-green {
-    color: black;
-
     background: var(--green);
 
-    box-shadow:
-        0 0 25px rgba(57,255,20,.18);
+    color: #111;
 }
 
 .btn-green:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
-    box-shadow:
-        0 0 35px rgba(57,255,20,.4);
+    box-shadow: 0 0 25px rgba(57,255,20,.5);
 }
 
 .btn-outline {
-    border: 1px solid #777;
+    border: 2px solid white;
 
     color: white;
 }
@@ -321,18 +272,21 @@ nav ul li a:hover {
     color: var(--green);
 }
 
-/* =====================================================
+
+/* =========================
    HERO IMAGE
-===================================================== */
+========================= */
 
 .hero-image {
-    height: 650px;
+    height: 600px;
 
-    position: relative;
+    border: 3px solid var(--green);
+
+    border-radius: 20px;
 
     overflow: hidden;
 
-    border-left: 2px solid var(--green);
+    background: #333333;
 }
 
 .hero-image img {
@@ -340,44 +294,23 @@ nav ul li a:hover {
     height: 100%;
 
     object-fit: cover;
-
-    object-position: center;
-
-    filter:
-        contrast(1.08)
-        saturate(.9);
 }
 
-.hero-image::after {
-    content: "";
 
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            #1a1a1a 0%,
-            rgba(26,26,26,.25) 35%,
-            transparent 65%
-        );
-}
-
-/* =====================================================
+/* =========================
    STATS
-===================================================== */
+========================= */
 
 .stats {
     display: grid;
 
     grid-template-columns: repeat(3,1fr);
 
-    background: #202020;
+    background: #444444;
 
-    border-top: 1px solid #444;
+    border-top: 2px solid #888;
 
-    border-bottom: 1px solid #444;
+    border-bottom: 2px solid #888;
 }
 
 .stat {
@@ -385,7 +318,7 @@ nav ul li a:hover {
 
     text-align: center;
 
-    border-right: 1px solid #444;
+    border-right: 1px solid #888;
 }
 
 .stat:last-child {
@@ -397,18 +330,19 @@ nav ul li a:hover {
 
     font-size: 32px;
 
-    font-weight: 1000;
+    font-weight: 900;
 
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 }
 
 .stat p {
-    color: #ddd;
+    color: white;
 }
 
-/* =====================================================
-   GENERAL
-===================================================== */
+
+/* =========================
+   SECTIONS
+========================= */
 
 section {
     padding: 110px 6%;
@@ -431,9 +365,7 @@ section {
 }
 
 .section-heading h2 {
-    font-size: clamp(40px,5vw,65px);
-
-    line-height: 1;
+    font-size: 60px;
 
     margin: 15px 0 20px;
 }
@@ -443,19 +375,20 @@ section {
 }
 
 .section-heading p {
-    color: #bbb;
-
-    line-height: 1.7;
+    color: white;
 
     font-size: 18px;
+
+    line-height: 1.7;
 }
 
-/* =====================================================
+
+/* =========================
    PROBLEM
-===================================================== */
+========================= */
 
 .problem {
-    background: #292929;
+    background: #777777;
 }
 
 .problem-layout {
@@ -485,7 +418,7 @@ section {
 }
 
 .problem-intro p {
-    color: #ccc;
+    color: white;
 
     line-height: 1.7;
 }
@@ -501,80 +434,38 @@ section {
 .problem-card {
     padding: 25px;
 
-    background: #1d1d1d;
+    background: #454545;
 
-    border: 1px solid #555;
+    border: 2px solid #888;
 
     border-radius: 12px;
-
-    transition: .3s;
 }
 
 .problem-card:hover {
-    transform: translateY(-7px);
-
-    border-color: rgba(57,255,20,.6);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.25);
-}
-
-/* REPLACED EMOJIS WITH CLEAN CSS SYMBOL */
-
-.problem-icon {
-    width: 48px;
-    height: 48px;
-
-    border: 2px solid var(--green);
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    color: var(--green);
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    margin-bottom: 20px;
-}
-
-.problem-icon::before {
-    content: "+";
-}
-
-.problem-card:nth-child(2) .problem-icon::before {
-    content: "↕";
-}
-
-.problem-card:nth-child(3) .problem-icon::before {
-    content: "⌁";
+    border-color: var(--green);
 }
 
 .problem-card h3 {
-    margin-bottom: 10px;
+    color: var(--green);
+
+    margin-bottom: 12px;
 }
 
 .problem-card p {
-    color: #aaa;
+    color: white;
 
     line-height: 1.6;
 
     font-size: 14px;
 }
 
-/* =====================================================
-   TRIMMER SECTION
-===================================================== */
+
+/* =========================
+   TRIMMER
+========================= */
 
 .trimmer-section {
-    background: #202020;
-
-    padding-top: 80px;
+    background: #606060;
 }
 
 .trimmer-layout {
@@ -598,9 +489,9 @@ section {
 
     overflow: hidden;
 
-    border: 1px solid #555;
+    border: 3px solid var(--green);
 
-    position: relative;
+    background: #333;
 }
 
 .trimmer-photo img {
@@ -610,29 +501,8 @@ section {
     object-fit: cover;
 }
 
-.trimmer-photo::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(57,255,20,.08),
-            transparent 50%
-        );
-
-    pointer-events: none;
-}
-
-.trimmer-copy .tag {
-    margin-bottom: 20px;
-}
-
 .trimmer-copy h2 {
-    font-size: clamp(45px,5vw,70px);
+    font-size: 65px;
 
     line-height: .95;
 
@@ -644,7 +514,7 @@ section {
 }
 
 .trimmer-copy > p {
-    color: #ccc;
+    color: white;
 
     line-height: 1.8;
 
@@ -658,24 +528,27 @@ section {
 
     gap: 15px;
 
-    margin-bottom: 23px;
+    margin-bottom: 25px;
 }
 
 .feature-number {
-    min-width: 40px;
-    height: 40px;
+    min-width: 42px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 42px;
 
     border-radius: 50%;
 
-    color: black;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     background: var(--green);
 
-    font-weight: 1000;
+    color: #111;
+
+    font-weight: 900;
 }
 
 .feature-row h3 {
@@ -683,17 +556,18 @@ section {
 }
 
 .feature-row p {
-    color: #aaa;
+    color: white;
 
     line-height: 1.5;
 }
 
-/* =====================================================
+
+/* =========================
    PRODUCT
-===================================================== */
+========================= */
 
 .product {
-    background: #292929;
+    background: #777777;
 }
 
 .product-layout {
@@ -717,14 +591,13 @@ section {
 
     overflow: hidden;
 
-    border: 1px solid #555;
+    border: 3px solid var(--green);
 
-    background: #1b1b1b;
+    background: #333;
 }
 
 .product-photo img {
     width: 100%;
-    height: 100%;
 
     min-height: 500px;
 
@@ -744,7 +617,7 @@ section {
 }
 
 .product-copy > p {
-    color: #ccc;
+    color: white;
 
     line-height: 1.8;
 
@@ -763,24 +636,31 @@ section {
 
 .check-icon {
     min-width: 30px;
+
     height: 30px;
 
     border-radius: 50%;
 
-    display: flex;
+    background: var(--green);
 
-    align-items: center;
-    justify-content: center;
-
-    border: 2px solid var(--green);
-
-    color: var(--green);
-
-    font-weight: bold;
+    position: relative;
 }
 
-.check-icon::before {
-    content: "✓";
+.check-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 14px;
+
+    border-right: 3px solid #111;
+    border-bottom: 3px solid #111;
+
+    transform: rotate(45deg);
+
+    left: 9px;
+    top: 5px;
 }
 
 .check h4 {
@@ -788,17 +668,18 @@ section {
 }
 
 .check p {
-    color: #aaa;
+    color: white;
 
     line-height: 1.5;
 }
 
-/* =====================================================
+
+/* =========================
    ADJUSTMENT
-===================================================== */
+========================= */
 
 .adjustment {
-    background: #202020;
+    background: #606060;
 }
 
 .adjustment-layout {
@@ -822,9 +703,9 @@ section {
 
     overflow: hidden;
 
-    border: 1px solid #555;
+    border: 3px solid var(--green);
 
-    position: relative;
+    background: #333;
 }
 
 .adjustment-photo img {
@@ -832,21 +713,6 @@ section {
     height: 100%;
 
     object-fit: cover;
-}
-
-.adjustment-photo::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(57,255,20,.15),
-            transparent 60%
-        );
 }
 
 .adjustment-copy h2 {
@@ -862,7 +728,7 @@ section {
 }
 
 .adjustment-copy > p {
-    color: #ccc;
+    color: white;
 
     line-height: 1.8;
 
@@ -870,37 +736,38 @@ section {
 }
 
 .adjustment-point {
-    background: #292929;
+    background: #474747;
 
-    border-left: 3px solid var(--green);
+    border-left: 4px solid var(--green);
 
     padding: 17px 20px;
 
     margin-bottom: 12px;
-
-    border-radius: 0 7px 7px 0;
 }
 
 .adjustment-point strong {
     display: block;
 
     margin-bottom: 5px;
+
+    color: white;
 }
 
 .adjustment-point span {
-    color: #aaa;
+    color: white;
 
     line-height: 1.5;
 
     font-size: 14px;
 }
 
-/* =====================================================
+
+/* =========================
    HOW IT WORKS
-===================================================== */
+========================= */
 
 .how {
-    background: #292929;
+    background: #777777;
 }
 
 .how-grid {
@@ -916,13 +783,17 @@ section {
 }
 
 .how-card {
-    background: #1d1d1d;
+    background: #444444;
 
-    border: 1px solid #555;
+    border: 2px solid #888;
 
     border-radius: 15px;
 
     overflow: hidden;
+}
+
+.how-card:hover {
+    border-color: var(--green);
 }
 
 .how-photo {
@@ -961,32 +832,28 @@ section {
 }
 
 .how-text p {
-    color: #aaa;
+    color: white;
 
     line-height: 1.6;
 }
 
-/* =====================================================
-   CTA
-===================================================== */
+
+/* =========================
+   CALL TO ACTION
+========================= */
 
 .cta {
     text-align: center;
 
     padding: 120px 20px;
 
-    background:
-        linear-gradient(
-            rgba(30,30,30,.90),
-            rgba(20,20,20,.95)
-        ),
-        url("hero-trimmer.jpg") center/cover;
+    background: #4a4a4a;
 
-    border-top: 1px solid rgba(57,255,20,.3);
+    border-top: 3px solid var(--green);
 }
 
 .cta h2 {
-    font-size: clamp(50px,7vw,90px);
+    font-size: 80px;
 
     line-height: .95;
 
@@ -998,7 +865,7 @@ section {
 }
 
 .cta p {
-    color: #ccc;
+    color: white;
 
     max-width: 650px;
 
@@ -1009,14 +876,15 @@ section {
     font-size: 18px;
 }
 
-/* =====================================================
+
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 footer {
-    background: #181818;
+    background: #333333;
 
-    border-top: 1px solid #444;
+    border-top: 2px solid #888;
 
     padding: 45px 6% 25px;
 }
@@ -1034,7 +902,7 @@ footer {
 
     padding-bottom: 30px;
 
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #777;
 }
 
 .footer-brand {
@@ -1059,7 +927,7 @@ footer {
 
 .footer-brand p,
 .footer-top > p {
-    color: #999;
+    color: white;
 
     font-size: 13px;
 }
@@ -1067,36 +935,17 @@ footer {
 .copyright {
     text-align: center;
 
-    color: #777;
+    color: #ccc;
 
     padding-top: 20px;
 
     font-size: 12px;
 }
 
-/* =====================================================
-   ANIMATION
-===================================================== */
 
-.reveal {
-    opacity: 0;
-
-    transform: translateY(25px);
-
-    transition:
-        opacity .7s ease,
-        transform .7s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-
-    transform: translateY(0);
-}
-
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
 @media(max-width: 950px) {
 
@@ -1123,10 +972,6 @@ footer {
 
     .hero-image {
         height: 450px;
-
-        border-left: none;
-
-        border-top: 2px solid var(--green);
     }
 
     .problem-layout,
@@ -1142,10 +987,6 @@ footer {
 
     .problem-grid {
         grid-template-columns: 1fr;
-    }
-
-    .trimmer-photo {
-        height: 450px;
     }
 
     .how-grid {
@@ -1167,14 +1008,8 @@ footer {
         padding: 75px 5%;
     }
 
-    .hero {
-        padding-top: 80px;
-    }
-
     .hero h1 {
         font-size: 55px;
-
-        letter-spacing: -3px;
     }
 
     .hero-image {
@@ -1188,11 +1023,7 @@ footer {
     .stat {
         border-right: none;
 
-        border-bottom: 1px solid #444;
-    }
-
-    .stat:last-child {
-        border-bottom: none;
+        border-bottom: 1px solid #888;
     }
 
     .trimmer-photo,
@@ -1208,19 +1039,19 @@ footer {
         min-height: 350px;
     }
 
+    .cta h2 {
+        font-size: 55px;
+    }
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -1238,33 +1069,23 @@ footer {
     <ul>
 
         <li>
-            <a href="#problem">
-                The Problem
-            </a>
+            <a href="#problem">The Problem</a>
         </li>
 
         <li>
-            <a href="#trimmer">
-                The Trimmer
-            </a>
+            <a href="#trimmer">The Trimmer</a>
         </li>
 
         <li>
-            <a href="#product">
-                The Product
-            </a>
+            <a href="#product">The Product</a>
         </li>
 
         <li>
-            <a href="#adjustment">
-                Adjustment
-            </a>
+            <a href="#adjustment">Adjustment</a>
         </li>
 
         <li>
-            <a href="#how">
-                How It Works
-            </a>
+            <a href="#how">How It Works</a>
         </li>
 
     </ul>
@@ -1277,14 +1098,11 @@ footer {
 </nav>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <header class="hero">
 
     <div class="hero-content">
-
 
         <div class="hero-text">
 
@@ -1292,13 +1110,11 @@ footer {
                 BUILT TO WORK SMARTER
             </div>
 
-
             <h1>
                 TAKE THE<br>
                 <span>WEIGHT</span><br>
                 OFF.
             </h1>
-
 
             <p>
                 The TrimWorks wheel is an innovative attachment
@@ -1307,21 +1123,13 @@ footer {
                 and less tiring.
             </p>
 
-
             <div class="buttons">
 
-                <a
-                    href="#product"
-                    class="btn btn-green"
-                >
-                    Explore the Product →
+                <a href="#product" class="btn btn-green">
+                    Explore the Product
                 </a>
 
-
-                <a
-                    href="#how"
-                    class="btn btn-outline"
-                >
+                <a href="#how" class="btn btn-outline">
                     See How It Works
                 </a>
 
@@ -1334,7 +1142,7 @@ footer {
 
             <img
                 src="hero-trimmer.jpg"
-                alt="TrimWorks wheel attached to a string trimmer on grass"
+                alt="TrimWorks wheel attached to a string trimmer"
             >
 
         </div>
@@ -1344,9 +1152,7 @@ footer {
 </header>
 
 
-<!-- =====================================================
-     STATS
-===================================================== -->
+<!-- STATS -->
 
 <div class="stats">
 
@@ -1383,7 +1189,7 @@ footer {
         </div>
 
         <p>
-            Built for Smarter Trimming
+            Smarter Trimming
         </p>
 
     </div>
@@ -1391,17 +1197,11 @@ footer {
 </div>
 
 
-<!-- =====================================================
-     PROBLEM
-===================================================== -->
+<!-- PROBLEM -->
 
-<section
-    class="problem"
-    id="problem"
->
+<section class="problem" id="problem">
 
     <div class="problem-layout">
-
 
         <div class="problem-intro">
 
@@ -1409,12 +1209,10 @@ footer {
                 THE PROBLEM
             </div>
 
-
             <h2>
-                Trimming shouldn't<br>
+                Trimming shouldn't
                 <span>wear you out.</span>
             </h2>
-
 
             <p>
                 String trimmers can become tiring to hold and control,
@@ -1428,10 +1226,7 @@ footer {
 
         <div class="problem-grid">
 
-
-            <div class="problem-card reveal">
-
-                <div class="problem-icon"></div>
+            <div class="problem-card">
 
                 <h3>
                     Arm Fatigue
@@ -1445,9 +1240,7 @@ footer {
             </div>
 
 
-            <div class="problem-card reveal">
-
-                <div class="problem-icon"></div>
+            <div class="problem-card">
 
                 <h3>
                     Back Strain
@@ -1461,9 +1254,7 @@ footer {
             </div>
 
 
-            <div class="problem-card reveal">
-
-                <div class="problem-icon"></div>
+            <div class="problem-card">
 
                 <h3>
                     Long Jobs
@@ -1483,40 +1274,32 @@ footer {
 </section>
 
 
-<!-- =====================================================
-     THE TRIMMER
-===================================================== -->
+<!-- TRIMMER -->
 
-<section
-    class="trimmer-section"
-    id="trimmer"
->
+<section class="trimmer-section" id="trimmer">
 
     <div class="trimmer-layout">
 
-
-        <div class="trimmer-photo reveal">
+        <div class="trimmer-photo">
 
             <img
                 src="trimmer-action.jpg"
-                alt="String trimmer using the TrimWorks support wheel"
+                alt="String trimmer using TrimWorks"
             >
 
         </div>
 
 
-        <div class="trimmer-copy reveal">
+        <div class="trimmer-copy">
 
             <div class="tag">
                 THE TRIMWORKS SYSTEM
             </div>
 
-
             <h2>
-                Your trimmer.<br>
+                Your trimmer.
                 <span>Reinvented.</span>
             </h2>
-
 
             <p>
                 TrimWorks combines a support wheel with an adjustable
@@ -1561,7 +1344,7 @@ footer {
 
                     <p>
                         Set the attachment to the position that works
-                        best for your trimming or edging job.
+                        best for trimming or edging.
                     </p>
 
                 </div>
@@ -1583,7 +1366,7 @@ footer {
 
                     <p>
                         Keep the cutting head positioned where you
-                        need it while maintaining control of the tool.
+                        need it while maintaining control.
                     </p>
 
                 </div>
@@ -1597,40 +1380,32 @@ footer {
 </section>
 
 
-<!-- =====================================================
-     PRODUCT
-===================================================== -->
+<!-- PRODUCT -->
 
-<section
-    class="product"
-    id="product"
->
+<section class="product" id="product">
 
     <div class="product-layout">
 
-
-        <div class="product-photo reveal">
+        <div class="product-photo">
 
             <img
                 src="wheel-closeup.jpg"
-                alt="Close-up of the TrimWorks support wheel"
+                alt="TrimWorks support wheel"
             >
 
         </div>
 
 
-        <div class="product-copy reveal">
+        <div class="product-copy">
 
             <div class="tag">
                 THE PRODUCT
             </div>
 
-
             <h2>
-                A small wheel.<br>
+                A small wheel.
                 <span>A big difference.</span>
             </h2>
-
 
             <p>
                 TrimWorks attaches a support wheel to a string trimmer,
@@ -1704,40 +1479,32 @@ footer {
 </section>
 
 
-<!-- =====================================================
-     ADJUSTMENT
-===================================================== -->
+<!-- ADJUSTMENT -->
 
-<section
-    class="adjustment"
-    id="adjustment"
->
+<section class="adjustment" id="adjustment">
 
     <div class="adjustment-layout">
 
-
-        <div class="adjustment-photo reveal">
+        <div class="adjustment-photo">
 
             <img
                 src="adjustment.jpg"
-                alt="TrimWorks adjustable wheel attachment"
+                alt="TrimWorks adjustable attachment"
             >
 
         </div>
 
 
-        <div class="adjustment-copy reveal">
+        <div class="adjustment-copy">
 
             <div class="tag">
                 SMART ADJUSTMENT
             </div>
 
-
             <h2>
-                Find your<br>
+                Find your
                 <span>perfect angle.</span>
             </h2>
-
 
             <p>
                 Not every trimming job is the same. The TrimWorks
@@ -1809,14 +1576,9 @@ footer {
 </section>
 
 
-<!-- =====================================================
-     HOW IT WORKS
-===================================================== -->
+<!-- HOW IT WORKS -->
 
-<section
-    class="how"
-    id="how"
->
+<section class="how" id="how">
 
     <div class="section-heading">
 
@@ -1824,11 +1586,10 @@ footer {
             HOW IT WORKS
         </small>
 
-
         <h2>
-            Simple. Smart. <span>Trim.</span>
+            Simple. Smart.
+            <span>Trim.</span>
         </h2>
-
 
         <p>
             Get the TrimWorks system set up and get to work.
@@ -1840,17 +1601,16 @@ footer {
     <div class="how-grid">
 
 
-        <div class="how-card reveal">
+        <div class="how-card">
 
             <div class="how-photo">
 
                 <img
                     src="how-attach.jpg"
-                    alt="Attaching the TrimWorks wheel"
+                    alt="Attaching TrimWorks"
                 >
 
             </div>
-
 
             <div class="how-text">
 
@@ -1872,17 +1632,16 @@ footer {
         </div>
 
 
-        <div class="how-card reveal">
+        <div class="how-card">
 
             <div class="how-photo">
 
                 <img
                     src="how-adjust.jpg"
-                    alt="Adjusting the TrimWorks wheel"
+                    alt="Adjusting TrimWorks"
                 >
 
             </div>
-
 
             <div class="how-text">
 
@@ -1904,17 +1663,16 @@ footer {
         </div>
 
 
-        <div class="how-card reveal">
+        <div class="how-card">
 
             <div class="how-photo">
 
                 <img
                     src="how-trim.jpg"
-                    alt="Using the TrimWorks wheel while trimming"
+                    alt="Using TrimWorks"
                 >
 
             </div>
-
 
             <div class="how-text">
 
@@ -1940,44 +1698,35 @@ footer {
 </section>
 
 
-<!-- =====================================================
-     CALL TO ACTION
-===================================================== -->
+<!-- CTA -->
 
-<section
-    class="cta"
-    id="contact"
->
+<section class="cta" id="contact">
 
     <h2>
-        WORK <span>SMARTER.</span>
+        WORK
+        <span>SMARTER.</span>
     </h2>
-
 
     <p>
         TrimWorks is creating a smarter way to use a string trimmer.
         Less weight to carry. More comfort. More control.
     </p>
 
-
     <a
         href="mailto:trimworks@example.com"
         class="btn btn-green"
     >
-        Contact TrimWorks →
+        Contact TrimWorks
     </a>
 
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
     <div class="footer-top">
-
 
         <div class="footer-brand">
 
@@ -1985,7 +1734,6 @@ footer {
                 src="logo.png"
                 alt="TrimWorks Logo"
             >
-
 
             <div>
 
@@ -2016,51 +1764,6 @@ footer {
     </div>
 
 </footer>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-
-const observer =
-    new IntersectionObserver(
-
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold: 0.15
-        }
-
-    );
-
-
-revealElements.forEach((element) => {
-
-    observer.observe(element);
-
-});
-
-</script>
 
 
 </body>
